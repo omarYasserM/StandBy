@@ -1,0 +1,33 @@
+footer{
+    background-color: #3a506b;
+    color: white;
+}
+
+#footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footer > .logo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#footer > .container{
+    display: flex;
+    text-align:center;
+    justify-content: space-around;
+    width: 500px;
+    margin-bottom: 20px;
+}
+.footer_social_media{
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+.footer_social_media > a > i:hover {
+    color: #5bc0be;
+  }
+.copyright{
+    margin-top: 10px;
+}
