@@ -1,0 +1,18 @@
+header > ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 30vw;
+  margin-left: auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px;
+  background-color: #3a506b;
+  color: white;
+}
+.logo {
+  font-size: x-large;
+  font-weight: 700;
+}
