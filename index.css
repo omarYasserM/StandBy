@@ -1,8 +1,12 @@
 * {
   margin: 0;
   font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
 }
 .logo {
   font-size: x-large;
   font-weight: 700;
+}
+.logo:hover {
+  cursor: pointer;
 }
