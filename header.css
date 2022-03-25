@@ -13,16 +13,20 @@ header {
 }
 header > ul > li {
   color: white;
-
   margin: 0 10px;
   cursor: pointer;
 }
-a:visited,
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.15s ease;
+
+header > ul > li::before {
+  content: "";
+  position: absolute;
+  transform: translate(0, 25px);
+  width: 30px;
+  height: 2px;
+  background-color: #5bc0be;
+  transition: all 1s;
 }
+
 header > ul > li:hover {
   color: #5bc0be;
 }
