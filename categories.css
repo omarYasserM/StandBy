@@ -1,0 +1,22 @@
+main {
+  padding: 10px;
+}
+main > * {
+  border-radius: 6px;
+}
+section {
+  height: 400px;
+  width: 75%;
+  margin-bottom: 10px;
+  background-color: white;
+}
+aside {
+  position: sticky;
+  top: 10px;
+  background-color: white;
+  height: 200px;
+  width: 24%;
+  display: inline;
+  float: right;
+  z-index: 100;
+}
