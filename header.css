@@ -17,16 +17,6 @@ header > ul > li {
   cursor: pointer;
 }
 
-header > ul > li::before {
-  content: "";
-  position: absolute;
-  transform: translate(0, 25px);
-  width: 30px;
-  height: 2px;
-  background-color: #5bc0be;
-  transition: all 1s;
-}
-
 header > ul > li:hover {
   color: #5bc0be;
 }
@@ -38,6 +28,7 @@ header > ul > li:last-child {
   transition: all 0.15s ease;
   font-weight: 500;
 }
+
 header > ul > li:last-child:hover {
   background-color: #5bc0beff;
   color: #12255c !important;
