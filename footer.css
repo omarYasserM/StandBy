@@ -15,7 +15,7 @@ footer > .container {
   display: flex;
   text-align: center;
   justify-content: space-between;
-  width: 500px;
+  width:fit-content;
   margin-bottom: 20px;
 }
 .container > * {
@@ -31,4 +31,14 @@ footer > .container {
 }
 .copyright {
   margin-top: 10px;
+}
+@media screen and (max-width: 660px) {
+    footer > .container{
+        display: flex;
+        flex-direction: column; 
+        width: fit-content;
+    }
+    .container > * {
+        margin-bottom: 10px;
+      }
 }

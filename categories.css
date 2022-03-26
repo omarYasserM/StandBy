@@ -25,7 +25,7 @@ main > * {
 }
 
 section {
-  height: 800px;
+  
   width: 75%;
   margin-bottom: 10px;
   background-color: white;
@@ -70,7 +70,7 @@ aside > button {
 aside > button:hover {
   background-color: #3a506b;
 }
-@media screen and (max-width: 776px) {
+@media screen and (max-width: 1020px) {
   aside {
     display: none;
   }
@@ -87,7 +87,7 @@ aside > button:hover {
   border: 0.1px gainsboro solid;
   font-weight: 400;
   border-radius: 6px;
-  margin: 20px;
+  margin: 20px 10px;
   width: 300px;
   height: fit-content;
   text-align: center;
