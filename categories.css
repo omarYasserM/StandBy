@@ -91,6 +91,10 @@ aside > button:hover {
   width: 300px;
   height: fit-content;
   text-align: center;
+  transition: all 0.1s ease-in;
+}
+.courses > div:hover {
+  transform: scale(1.05);
 }
 .courses > div > img {
   width: 100%;
