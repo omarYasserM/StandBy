@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#"><span class="logo">StandBy</span></a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Career paths</a></li>
+            <li><a href="#">Sign Up</a></li>
+        </ul>
+        <i class="fa fa-bars navmenu" aria-hidden="true"></i>
+    </header>
+    <div class="container">
+        <div class="header"><center> <h2> Create Account</h2></center></div>
+     
+     
+     <form class=" form" id="form">
+     <div class="form-control " > 
+         <label >Username </label>
+         <input type="text"placeholder="Enter Username" id="username" pattern="[a-z]*" >
+        <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+         <small>Error Message </small>
+     </div>
+     <div class="form-control "> 
+         <label >Email</label>
+         <input type="text"placeholder="Enter Email" id="email">
+        <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+         <small>Error Message </small>
+     </div>
+     <div class="form-control"> 
+         <label >Password </label>
+         <input type="password"placeholder="Enter password" id="password" pattern="(?=.*d)(?=.*[a-z]).{8,}" title="Must contain at least one Number ,and uppercaseand lowercase letter ,andat least 8 or more character">
+        <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+         <small>Error Message </small>
+     </div>
+     <div class="form-control"> 
+         <label >Confirm password </label>
+         <input type="password"placeholder="Enter  password" id="password">
+         <i class="fas fa-check-circle"></i>
+         <i class="fas fa-exclamation-circle"></i>
+         <small>Error Message </small>
+     </div>
+     <br>
+     <br>
+     <button>Sign Up </button>
+     </form>
+     </div>
+
+    <footer>   
+   
+        <span class="logo">StandBy</span>
+        <div class="container">
+            <div>
+                <span>About</span>
+                <p>What is StandBy</p>
+            </div>
+            <div>
+                <span>Contact us</span>
+                <p>Your feedback matter</p>
+            </div>
+            <div>
+                <span>Guide</span>
+                <p>How to use StandBy</p>
+            </div>
+        </div>
+        <p></p>
+        <div class="footer_social_media">
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+            <a href="https://mail.google.com" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+        </div>
+        <p class="copyright">StandBy &copy; to Great Team.</p>
+    
+     
+</footer>
+</body>
+</html>
