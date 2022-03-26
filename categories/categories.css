@@ -111,7 +111,7 @@ aside > button:hover {
   height: 150px;
   object-fit: cover;
 }
-h2 {
+.courses h2 {
   margin: 8px 0 0 20px;
   border-top: 0.1px solid #3a506b22;
   width: 100%;
