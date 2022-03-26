@@ -33,3 +33,8 @@ header > ul > li:last-child:hover {
   background-color: #5bc0beff;
   color: #12255c !important;
 }
+@media screen and (max-width: 650px) {
+  header > ul {
+    display: none;
+  }
+}
