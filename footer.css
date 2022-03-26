@@ -21,6 +21,13 @@ footer > .container {
 .container > * {
   width: 200px;
 }
+.container > div > span{
+    font-weight:bold;
+}
+.container > div > span:hover {
+    color: #5bc0be;
+    cursor: pointer;
+  }
 .footer_social_media {
   display: flex;
   justify-content: space-around;
