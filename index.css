@@ -3,6 +3,9 @@
   font-family: "Nunito", sans-serif;
   box-sizing: border-box;
 }
+body {
+  background-color: #e5eceb;
+}
 .logo {
   font-size: x-large;
   font-weight: 700;

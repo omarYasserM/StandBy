@@ -1,0 +1,104 @@
+main {
+  padding: 10px;
+}
+main > * {
+  border-radius: 6px;
+}
+.banner {
+  width: 100%;
+  height: 300px;
+  background: no-repeat center url("images/graphicBanner.jpg");
+
+  color: white;
+}
+.banner > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    rgba(11, 19, 43, 0.568) 1%,
+    rgba(9, 9, 121, 0) 80%
+  );
+  border-radius: 6px;
+}
+
+section {
+  height: 800px;
+  width: 75%;
+  margin-bottom: 10px;
+  background-color: white;
+}
+aside {
+  position: sticky;
+  top: 10px;
+  background-color: white;
+  height: 200px;
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  float: right;
+  z-index: 100;
+  align-items: center;
+}
+aside input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+aside > .searchBox {
+  background-color: #0b132b;
+  color: white;
+  padding: 5px;
+  width: 230px;
+  border-radius: 6px;
+}
+
+aside > button {
+  cursor: pointer;
+  margin-top: 10px;
+  width: 170px;
+  padding: 5px;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  border: none;
+  background-color: #5bc0be;
+  border-radius: 6px;
+  color: white;
+}
+aside > button:hover {
+  background-color: #3a506b;
+}
+@media screen and (max-width: 776px) {
+  aside {
+    display: none;
+  }
+  section {
+    width: 100%;
+  }
+}
+.courses {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+.courses > div {
+  border: 0.1px gainsboro solid;
+  font-weight: 400;
+  border-radius: 6px;
+  margin: 20px;
+  width: 300px;
+  height: fit-content;
+  text-align: center;
+}
+.courses > div > img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+h2 {
+  margin: 8px 0 0 20px;
+  border-top: 0.1px solid #3a506b22;
+  width: 100%;
+}
