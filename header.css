@@ -39,6 +39,7 @@ header > i {
 @media screen and (max-width: 650px) {
   header > i {
     display: block !important;
+    font-size: 32px !important;
   }
   header > ul {
     display: none;
