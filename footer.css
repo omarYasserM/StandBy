@@ -19,7 +19,7 @@ footer > .container {
   margin-bottom: 20px;
 }
 .container > * {
-  width: 150px;
+  width: 200px;
 }
 .footer_social_media {
   display: flex;
