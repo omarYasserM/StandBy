@@ -10,7 +10,7 @@
   width: 300px;
   height: 450px;
   max-width: 100%;
-  margin: 10px auto;
+  margin: 30px auto;
 }
 
 .header {
@@ -66,6 +66,13 @@
   outline: none;
   background-color: none;
   border-bottom: 0.2px solid #3a506b;
+}
+
+.formContainer input:invalid {
+  border-bottom: 0.3px solid red;
+}
+.formContainer input:valid {
+  border-bottom: 0.3px solid #4778b4;
 }
 
 /* input[type="text"]:focus,
