@@ -30,6 +30,7 @@ const temp_list = [
     level: 1,
   },
 ];
+
 const insertAfter = (referenceNode, newNode) => {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 };
@@ -37,7 +38,7 @@ const insertAfter = (referenceNode, newNode) => {
 temp_list.map((item) => {
   const courses = document.getElementsByClassName("courses");
   const course = document.createElement("div");
-  course.innerHTML = `<img src="${item.thumbnail}" alt="${item.name}"><span>${item.name}</span>`;
+  course.innerHTML = `<a href=${item.link} target="blank"><img src="${item.thumbnail}" alt="${item.name}"><span>${item.name}</span></a>`;
   if (item.level == 0) insertAfter(document.getElementById("level-0"), course);
   else insertAfter(document.getElementById("level-1"), course);
 });
