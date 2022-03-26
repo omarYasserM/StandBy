@@ -25,7 +25,6 @@ main > * {
 }
 
 section {
-  
   width: 75%;
   margin-bottom: 10px;
   background-color: white;
@@ -85,6 +84,7 @@ aside > button:hover {
 }
 .courses > div {
   border: 0.1px gainsboro solid;
+  cursor: pointer;
   font-weight: 400;
   border-radius: 6px;
   margin: 20px 10px;
@@ -92,6 +92,16 @@ aside > button:hover {
   height: fit-content;
   text-align: center;
   transition: all 0.1s ease-in;
+}
+@media screen and (max-width: 660px) {
+  .courses {
+    justify-content: center;
+  }
+  .courses > div {
+    width: 90%;
+    height: 200px;
+    background-size: cover;
+  }
 }
 .courses > div:hover {
   transform: scale(1.05);

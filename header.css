@@ -1,10 +1,10 @@
 header > ul {
   list-style: none;
   display: flex;
-  margin-left: auto;
   align-items: center;
 }
 header {
+  justify-content: space-between;
   display: flex;
   align-items: center;
   padding: 25px 30px;
@@ -33,7 +33,13 @@ header > ul > li:last-child:hover {
   background-color: #5bc0beff;
   color: #12255c !important;
 }
+header > i {
+  display: none !important;
+}
 @media screen and (max-width: 650px) {
+  header > i {
+    display: block !important;
+  }
   header > ul {
     display: none;
   }
