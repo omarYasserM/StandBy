@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StandBy - SignUp</title>
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="../footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="stylesheet" href="signUp.css">
 </head>
 <body>
     <header>
@@ -68,6 +69,23 @@
         <span>Already registered? <a href="#">Login</a></span>
         </form>
      </div>
+     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+     <script>
+         const firebaseConfig = {
+                apiKey: "AIzaSyAGaZVpMX1YZVNY8U5GYvuLbn4610d3fSc",
+                authDomain: "standby-e4a3a.firebaseapp.com",
+                projectId: "standby-e4a3a",
+                storageBucket: "standby-e4a3a.appspot.com",
+                messagingSenderId: "968894643985",
+                appId: "1:968894643985:web:55d67a5ff368d7b66856b0",
+                measurementId: "G-8GJL40QP83",
+                };
+
+            // Initialize Firebase
+            const app = firebase.initializeApp(firebaseConfig);
+
+     </script>
 
     
 </body>
