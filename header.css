@@ -1,4 +1,4 @@
-header > ul {
+header  ul {
   list-style: none;
   display: flex;
   align-items: center;
@@ -11,17 +11,17 @@ header {
   background-color: #3a506b;
   color: white;
 }
-header > ul > * {
+header ul > * {
   color: white;
   margin: 0 10px;
   cursor: pointer;
 }
 
-header > ul > *:hover {
+header ul > *:hover {
   color: #5bc0be;
 }
 
-header > ul > li:last-child {
+header ul > li:last-child {
   background-color: #5bc0beaa;
   padding: 5px 10px;
   border-radius: 8px;
@@ -29,7 +29,7 @@ header > ul > li:last-child {
   font-weight: 500;
 }
 
-header > ul > li:last-child:hover {
+header ul > li:last-child:hover {
   background-color: #5bc0beff;
   color: #12255c !important;
 }

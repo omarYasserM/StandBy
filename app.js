@@ -1,7 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-
-// If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
-// Add Firebase products that you want to use
 const firebaseConfig = {
   apiKey: "AIzaSyAGaZVpMX1YZVNY8U5GYvuLbn4610d3fSc",
   authDomain: "standby-e4a3a.firebaseapp.com",
@@ -13,4 +9,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();

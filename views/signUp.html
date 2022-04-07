@@ -14,7 +14,7 @@
 <body>
     <header>
         <a href="#"><span class="logo">StandBy</span></a>
-        <ul>
+        <nav> <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Courses</a></li>
             <div>
@@ -30,7 +30,8 @@
                 </ul>
             </div>
             <li><a href="#">Sign Up</a></li>
-        </ul>
+        </ul></nav>
+       
         <i class="fa fa-bars navmenu" aria-hidden="true"></i>
     </header>
 
@@ -39,54 +40,40 @@
         <div class="header"><h2> Create Account</h2></div>
      
      
-        <form>
+        <form id="signup-form">
 
         <label >Username </label>
         <div>        
         <i class="fa-solid fa-user"></i>
-        <input type="text"placeholder="Enter Username" required>
+        <input id="username" type="text"placeholder="Enter Username" required>
         </div>
 
         <label >Email</label>
         <div>
             <i class="fa-solid fa-envelope"></i>
-            <input type="email"placeholder="Enter Email" required>
+            <input  id="email" type="email"placeholder="Enter Email" required>
         </div>
         
         <label >Password </label>
         <div>
         <i class="fa-solid fa-key"></i>
-        <input type="password"placeholder="Enter password" required>
+        <input id="password" type="password"placeholder="Enter password" required>
         </div>
          
         <label >Confirm password </label>
         <div>
         <i class="fa-solid fa-key"></i>
-        <input type="password"placeholder="Enter  password" required>
+        <input id="repassword" type="password"placeholder="Enter  password" required>
         </div>
         
-        <button>Sign Up</button>
-        <span>Already registered? <a href="#">Login</a></span>
+        <button type="submit">Sign Up</button>
+        <span>Already registered? <a href="login.html">Login</a></span>
         </form>
      </div>
      <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
      <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
-     <script>
-         const firebaseConfig = {
-                apiKey: "AIzaSyAGaZVpMX1YZVNY8U5GYvuLbn4610d3fSc",
-                authDomain: "standby-e4a3a.firebaseapp.com",
-                projectId: "standby-e4a3a",
-                storageBucket: "standby-e4a3a.appspot.com",
-                messagingSenderId: "968894643985",
-                appId: "1:968894643985:web:55d67a5ff368d7b66856b0",
-                measurementId: "G-8GJL40QP83",
-                };
-
-            // Initialize Firebase
-            const app = firebase.initializeApp(firebaseConfig);
-
-     </script>
-
+     <script src="../app.js"></script>
+     <script src="../firebase/Auth.js"></script>
     
 </body>
 </html>
