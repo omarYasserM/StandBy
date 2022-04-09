@@ -1,11 +1,11 @@
 // AuthState
 auth.onAuthStateChanged((user) => {
   if (user) {
-    if (window.location.pathname != "/views/categories.html")
-      window.location = "categories.html";
+    if (window.location.pathname != "/StandBy/views/categories")
+      window.location = "/StandBy/views/signup";
   } else {
-    if (window.location.pathname != "/views/signUp.html")
-      window.location = "signUp.html";
+    if (window.location.pathname != "/StandBy/views/signUp")
+      window.location = "/StandBy/views/home";
   }
 });
 
