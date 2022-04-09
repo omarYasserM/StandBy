@@ -59,7 +59,7 @@ header > i {
 }
 
 
-.dropdown-content {
+header ul.dropdown-content {
   display: none;
   position: absolute;
   background-color: #3a506b;
@@ -80,11 +80,11 @@ header > i {
   display: block;
 }
 
-.dropdown-content  a:hover {
+.dropdown-content a:hover {
   color: #5bc0beff;
 }
 
-header ul .dropdown-content {
+header ul div:hover .dropdown-content {
   display: flex;
   flex-direction: column;
 }
