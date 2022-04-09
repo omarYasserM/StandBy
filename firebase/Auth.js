@@ -1,11 +1,8 @@
 // AuthState
 auth.onAuthStateChanged((user) => {
-  if (user) {
-    if (window.location.pathname != "/views/categories.html")
-      window.location = "categories.html";
-  } else {
-    if (window.location.pathname != "/views/signUp.html")
-      window.location = "signUp.html";
+  if (!user) {
+    if (window.location.pathname != "/views/signup/")
+      window.location = "/views/signup";
   }
 });
 
@@ -15,7 +12,7 @@ const signupForm = document.querySelector("#signup-form");
 if (signupForm) {
   signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    const username = signupForm["username"].value;
     const email = signupForm["email"].value;
     const password = signupForm["password"].value;
 
@@ -27,10 +24,12 @@ if (signupForm) {
         })
         .then(() => {
           console.log(`User:${username} created sucessfully`);
+          window.location = "/views/home";
         })
         .catch((error) => {
           console.error(error);
         });
+
       signupForm.reset();
     });
   });
