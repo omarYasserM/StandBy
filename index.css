@@ -19,3 +19,138 @@ a {
   text-decoration: none;
   transition: all 0.15s ease;
 }
+header  ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+header {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 25px 30px;
+  background-color: #3a506b;
+  color: white;
+}
+header ul > * {
+  color: white;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+header ul > *:hover {
+  color: #5bc0be;
+}
+
+header ul > li:last-child {
+  background-color: #5bc0beaa;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  font-weight: 500;
+}
+
+header ul > li:last-child:hover {
+  background-color: #5bc0beff;
+  color: #12255c !important;
+}
+header > i {
+  display: none !important;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #3a506b;
+  min-width: fit-content;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 6px;
+  list-style: none;
+  padding: 0px;
+}
+
+.dropdown-content > li {
+  color:#ddd;
+  padding: 10px 15px;
+}
+
+.dropdown-content > li > a{
+  display: block;
+}
+
+.dropdown-content  a:hover {
+  color: #5bc0beff;
+}
+
+header > ul > div:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+header > ul > div:hover{
+  transition: all 0.15s ease;
+  padding-top: 10px;
+}
+
+
+@media screen and (max-width: 650px) {
+  header > i {
+    display: block !important;
+    font-size: 32px !important;
+  }
+  header > ul {
+    display: none;
+  }
+}
+footer {
+  background-color: #3a506b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > .logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+footer > .container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  width:fit-content;
+  margin-bottom: 20px;
+}
+.container > * {
+  width: 200px;
+}
+.container > div > span{
+    font-weight:bold;
+}
+.container > div > span:hover {
+    color: #5bc0be;
+    cursor: pointer;
+  }
+.footer_social_media {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+.footer_social_media > a > i:hover {
+  color: #5bc0be;
+}
+.copyright {
+  margin-top: 10px;
+}
+@media screen and (max-width: 660px) {
+    footer > .container{
+        display: flex;
+        flex-direction: column; 
+        width: fit-content;
+    }
+    .container > * {
+        margin-bottom: 10px;
+      }
+}
