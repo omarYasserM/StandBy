@@ -43,7 +43,7 @@ getDocs(collref)
     snapshot.docs.forEach((doc) => {
       course_list.push({ ...doc.data(), id: doc.id });
     });
-    console.log(course_list);
+    AddCourses(course_list);
   })
   .catch((err) => {
     console.error(err.message);
@@ -53,10 +53,12 @@ const insertAfter = (referenceNode, newNode) => {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 };
 
-temp_list.map((item) => {
-  const courses = document.getElementsByClassName("courses");
-  const course = document.createElement("div");
-  course.innerHTML = `<a href=${item.link} target="blank"><img src="${item.thumbnail}" alt="${item.name}"><span>${item.name}</span></a>`;
-  if (item.level == 0) insertAfter(document.getElementById("level-0"), course);
-  else insertAfter(document.getElementById("level-1"), course);
-});
+const AddCourses = (course_list) =>
+  course_list.map((item) => {
+    const courses = document.getElementsByClassName("courses");
+    const course = document.createElement("div");
+    course.innerHTML = `<a href=${item.link} target="blank"><img src="${item.thumbnail}" alt="${item.name}"><span>${item.name}</span></a>`;
+    if (item.level == 0)
+      insertAfter(document.getElementById("level-0"), course);
+    else insertAfter(document.getElementById("level-1"), course);
+  });
