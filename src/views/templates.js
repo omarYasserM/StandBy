@@ -1,13 +1,15 @@
+import "../index.css";
+
 const header = document.querySelector(".header");
 if (header) {
   header.innerHTML = `
    <header>   
     <a href="#"><span class="logo">StandBy</span></a>
     <ul>
-        <li><a href="/views/home">Home</a></li>
+        <li><a href="./home.html">Home</a></li>
         <li><a href="#">Courses</a></li>
         <div>
-            <li><a href="/views/categories">Career paths</a></li>
+            <li><a href="./categories.html">Career paths</a></li>
             <ul class="dropdown-content">
                 <li><a href="#">IT</a></li>
                 <li><a href="#">Programming</a></li>

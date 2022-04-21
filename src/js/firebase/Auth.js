@@ -1,10 +1,10 @@
 // AuthState
-auth.onAuthStateChanged((user) => {
-  if (!user) {
-    if (window.location.pathname != "/views/signup/")
-      window.location = "/views/signup";
-  }
-});
+// auth.onAuthStateChanged((user) => {
+//   if (!user) {
+//     if (window.location.pathname != "/views/signup/")
+//       window.location = "/views/signup";
+//   }
+// });
 
 // Signup
 const signupForm = document.querySelector("#signup-form");
