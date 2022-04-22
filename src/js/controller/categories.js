@@ -3,40 +3,12 @@ import "/src/views/templates.js";
 import { db } from "../firebase";
 import { collection, getDocs } from "@firebase/firestore";
 
-// const temp_list = [
-//   {
-//     thumbnail: "https://img.youtube.com/vi/YqQx75OPRa0/0.jpg",
-//     name: "Beginning Graphic Design: Fundamentals",
-//     link: "https://www.youtube.com/watch?v=YqQx75OPRa0",
-//     level: 0,
-//   },
-//   {
-//     thumbnail: "https://img.youtube.com/vi/sByzHoiYFX0/0.jpg",
-//     name: "Beginning Graphic Design: Typography",
-//     link: "https://www.youtube.com/watch?v=sByzHoiYFX0",
-//     level: 0,
-//   },
-//   {
-//     thumbnail: "https://img.youtube.com/vi/_2LLXnUdUIc/0.jpg",
-//     name: "Beginning Graphic Design: Color",
-//     link: "https://www.youtube.com/watch?v=_2LLXnUdUIc",
-//     level: 0,
-//   },
-//   {
-//     thumbnail: "https://img.youtube.com/vi/0fvEFIkT7pM/0.jpg",
-//     name: "Improve Your Typography: Poster Design Critique",
-//     link: "https://www.youtube.com/watch?v=0fvEFIkT7pM",
-//     level: 1,
-//   },
-//   {
-//     thumbnail: "https://img.youtube.com/vi/wbMQP6lYBHM/0.jpg",
-//     name: "Rethinking the Client Dynamic— Improve the process for a better experience",
-//     link: "https://www.youtube.com/watch?v=wbMQP6lYBHM",
-//     level: 1,
-//   },
-// ];
-
-const collref = collection(db, "Graphic design");
+let page = window.location.search;
+if (page == "") page = "sCategories";
+document.getElementById("categoryTitle").innerHTML = page
+  .slice(1, page.length)
+  .replace("%20", " ");
+const collref = collection(db, page.slice(1, page.length).replace("%20", " "));
 let course_list = [];
 getDocs(collref)
   .then((snapshot) => {
@@ -55,10 +27,18 @@ const insertAfter = (referenceNode, newNode) => {
 
 const AddCourses = (course_list) =>
   course_list.map((item) => {
-    const courses = document.getElementsByClassName("courses");
     const course = document.createElement("div");
-    course.innerHTML = `<a href=${item.link} target="blank"><img src="${item.thumbnail}" alt="${item.name}"><span>${item.name}</span></a>`;
-    if (item.level == 0)
-      insertAfter(document.getElementById("level-0"), course);
-    else insertAfter(document.getElementById("level-1"), course);
+    course.innerHTML = `<a href=${item.link} target="blank"><img src="${item.thumbnail}" alt="${item.title}"><span>${item.title}</span></a>`;
+    const level0 = document.getElementById("level-0");
+    const level1 = document.getElementById("level-1");
+
+    if (item.level == 0) {
+      level0.style.display = "inline";
+      insertAfter(level0, course);
+    } else if (item.level == 1) {
+      level1.style.display = "inline";
+      insertAfter(level1, course);
+    } else {
+      insertAfter(level0, course);
+    }
   });

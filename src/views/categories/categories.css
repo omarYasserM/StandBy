@@ -81,6 +81,8 @@ aside > button:hover {
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
+  min-height: 570px;
+
 }
 .courses > div {
   border: 0.1px gainsboro solid;
@@ -115,4 +117,5 @@ aside > button:hover {
   margin: 8px 0 0 20px;
   border-top: 0.1px solid #3a506b22;
   width: 100%;
+  display: none;
 }

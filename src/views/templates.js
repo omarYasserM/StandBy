@@ -11,12 +11,11 @@ if (header) {
         <div>
             <li><a href="./categories.html">Career paths</a></li>
             <ul class="dropdown-content">
-                <li><a href="#">IT</a></li>
-                <li><a href="#">Programming</a></li>
-                <li><a href="#">Computer networks</a></li>
-                <li><a href="#">Accounting</a></li>
-                <li><a href="#">Graphic design</a></li>
-                <li><a href="#">Language</a></li>
+                <li><a href="/public/categories.html?Programming">Programming</a></li>
+                <li><a href="/public/categories.html?Computer%20networks">Computer networks</a></li>
+                <li><a href="/public/categories.html?Accounting">Accounting</a></li>
+                <li><a href="/public/categories.html?Graphic%20design">Graphic design</a></li>
+                <li><a href="/public/categories.html?Language">Language</a></li>
                 
                 
             </ul>
