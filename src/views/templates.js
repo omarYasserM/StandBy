@@ -60,3 +60,4 @@ if (footer) {
 
 </footer>`;
 }
+document.body.style.display = "block";

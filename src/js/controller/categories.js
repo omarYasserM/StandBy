@@ -1,25 +1,13 @@
 import "/src/views/categories/categories.css";
 import "/src/views/templates.js";
-import { db } from "../firebase";
-import { collection, getDocs } from "@firebase/firestore";
+import "../firebase/Auth.js";
+import { getCollectionData } from "../firebase/Firestore.js";
 
 let page = window.location.search;
-if (page == "") page = "sCategories";
+if (page == "") page = "?Categories";
 document.getElementById("categoryTitle").innerHTML = page
   .slice(1, page.length)
   .replace("%20", " ");
-const collref = collection(db, page.slice(1, page.length).replace("%20", " "));
-let course_list = [];
-getDocs(collref)
-  .then((snapshot) => {
-    snapshot.docs.forEach((doc) => {
-      course_list.push({ ...doc.data(), id: doc.id });
-    });
-    AddCourses(course_list);
-  })
-  .catch((err) => {
-    console.error(err.message);
-  });
 
 const insertAfter = (referenceNode, newNode) => {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -42,3 +30,5 @@ const AddCourses = (course_list) =>
       insertAfter(level0, course);
     }
   });
+
+getCollectionData(page, AddCourses);
