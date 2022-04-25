@@ -54,7 +54,7 @@ const addCourses = () => {
       level2.style.display = "inline";
       line2.appendChild(course);
     } else {
-      insertAfter(level0, course);
+      line0.appendChild(course);
     }
   });
 };
