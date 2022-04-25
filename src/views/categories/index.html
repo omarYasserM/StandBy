@@ -5,31 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Categories</title>
 
 </head>
 <body style="display: none;">
 <span class="header"></span>
+<section class="banner"><div><h1 id="categoryTitle"></h1></div></section>
+
 <main>
-    <section class="banner"><div><h1 id="categoryTitle"></h1></div></section>
-    <aside><h2>Search</h2>
-        <div class="searchBox">
-            <span class="fa fa-search"></span>
-            <input type="text" placeholder="Search" id="search_box">
-        </div>
-        
+    <aside>
+        <div> 
+            <h2>Search</h2>
+            <div class="searchBox">
+                <span class="fa fa-search"></span>              
+                <input type="text" placeholder="Search" id="search_box">
+            </div>
+            <span class="result-counter"></span>
             <button id="inner_search">Search in</button>
             <button id="reset_search">Reset filters</button>
-        
+        </div>
+        <div>
+            <h2>Need a top tier course?</h2>
+            <div class="searchBox" id="request-box">
+                <span class="fa fa-search"></span>
+                <input type="text" placeholder="Topics" id="request-input">
+            </div>
+            <button id="inner_request">Request</button>
+
+
+        </div>
+      
        
     
     </aside>
 
     <section class="courses">   
-
             <h2 id="level-0">Beginner</h2>                
             
-            <h2 id="level-1">Advanced</h2>
+            <h2 id="level-1">Intermediate</h2>
+
+            <h2 id="level-2">Advanced</h2>
         
     </section>
 </main>

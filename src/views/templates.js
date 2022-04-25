@@ -4,18 +4,18 @@ const header = document.querySelector(".header");
 if (header) {
   header.innerHTML = `
    <header>   
-    <a href="#"><span class="logo">StandBy</span></a>
+    <a href="./home.html"><span class="logo">StandBy</span></a>
     <ul>
         <li><a href="./home.html">Home</a></li>
         <li><a href="#">Courses</a></li>
         <div>
             <li><a href="./categories.html">Career paths</a></li>
             <ul class="dropdown-content">
-                <li><a href="/public/categories.html?Programming">Programming</a></li>
-                <li><a href="/public/categories.html?Computer%20networks">Computer networks</a></li>
-                <li><a href="/public/categories.html?Accounting">Accounting</a></li>
-                <li><a href="/public/categories.html?Graphic%20design">Graphic design</a></li>
-                <li><a href="/public/categories.html?Language">Language</a></li>
+                <li><a href="./categories.html?Programming">Programming</a></li>
+                <li><a href="./categories.html?Computer%20networks">Computer networks</a></li>
+                <li><a href="./categories.html?Accounting">Accounting</a></li>
+                <li><a href="./categories.html?Graphic%20design">Graphic design</a></li>
+                <li><a href="./categories.html?Language">Language</a></li>
                 
                 
             </ul>

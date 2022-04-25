@@ -1,19 +1,13 @@
-export let CourseState = () => {
-  let listeners = [];
-  let state = [];
+let CourseListeners = [];
+let CourseState = [];
+
+export const CourseStore = () => {
+  const state = () => CourseState;
   const setState = (list) => {
-    state = list;
-    listeners.forEach((item) => item());
+    CourseState = list;
+    CourseListeners.forEach((item) => item());
   };
-  const addListener = (listener) => listeners.push(listener);
+  const addListener = (listener) => CourseListeners.push(listener);
 
   return { setState, addListener, state };
 };
-
-let listeners = [];
-export let state = [];
-export const setState = (list) => {
-  state = list;
-  listeners.forEach((item) => item());
-};
-export const addListener = (listener) => listeners.push(listener);
