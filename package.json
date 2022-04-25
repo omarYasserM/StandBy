@@ -1,0 +1,32 @@
+{
+  "name": "learningwebsite",
+  "version": "1.0.0",
+  "description": "This is a learning website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarYasserM/Learningwebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omarYasserM/Learningwebsite/issues"
+  },
+  "homepage": "https://github.com/omarYasserM/Learningwebsite#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "firebase": "^9.6.11",
+    "google-fonts": "^1.0.0"
+  }
+}
