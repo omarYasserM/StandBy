@@ -34,8 +34,8 @@ if (header) {
 
 const toggleMenu = () => {
   if (mState.state() == true)
-    document.querySelector("header > ul").style.right = "0px";
-  else document.querySelector("header > ul").style.right = "-200px";
+    document.querySelector("header > ul").style.top = "0px";
+  else document.querySelector("header > ul").style.top = "-300px";
 };
 mState.addListener(toggleMenu);
 const footer = document.querySelector(".footer");

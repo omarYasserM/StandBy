@@ -30,6 +30,7 @@ header > ul {
   align-items: center;
 }
 header {
+  z-index: 10;
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -111,18 +112,17 @@ header > ul > div:hover{
   }
   header > ul {
     z-index: 0;
-    margin-left: 0;
-    width: 200px;
+    margin: 0;
+    width: 100%;
     background-color: #3a506b;
     flex-direction: column;
-    position: fixed;
-    right: -200px;
-    height: 100vh;
-    padding: 100px 0;
-    top:0;
-    align-items: flex-start;
-    font-size: larger;    
-
+    position: absolute;
+    top: -300px;
+    height: 300px;
+    justify-content: center;
+    font-size: larger;  
+    left:0;
+    padding: 10px;  
   }
   header > ul > * {
     height: 40px;

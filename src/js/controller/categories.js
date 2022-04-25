@@ -101,6 +101,7 @@ searchbtn.addEventListener("click", () => {
 
 resetbtn.addEventListener("click", () => {
   document.getElementById("search_box").value = "";
+  document.querySelector(".result-counter").innerHTML = "";
   const myAlert = document.querySelector(".alert");
   myAlert != undefined ?? document.body.removeChild(myAlert);
   getCollectionData(page, cState.setState);
