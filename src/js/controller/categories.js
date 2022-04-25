@@ -19,15 +19,12 @@ const requestbtn = document.getElementById("inner_request");
 searchbtn.innerHTML =
   "Search in " + page.slice(1, page.length).replace("%20", " ");
 
-const insertAfter = (referenceNode, newNode) => {
-  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-};
 const updateCourses = () => {
   document.getElementById("level-0").style.display = "none";
   document.getElementById("level-1").style.display = "none";
   document.getElementById("level-2").style.display = "none";
 
-  const unwanted = document.querySelectorAll(".courses > div");
+  const unwanted = document.querySelectorAll(".course-line > div");
   unwanted.forEach((item) => {
     item.parentElement.removeChild(item);
   });
@@ -39,20 +36,23 @@ const addCourses = () => {
   const level0 = document.getElementById("level-0");
   const level1 = document.getElementById("level-1");
   const level2 = document.getElementById("level-2");
+  const line0 = document.getElementById("line-0");
+  const line1 = document.getElementById("line-1");
+  const line2 = document.getElementById("line-2");
   cState.state().map((item) => {
     const course = document.createElement("div");
     course.className = "course" + i++;
-    course.innerHTML = `<a href=${item.link} target="blank"><img src="${item.thumbnail}" alt="${item.title}"><span>${item.title}</span></a>`;
+    course.innerHTML = `<a target="_blank" href=${item.link} ><img src="${item.thumbnail}" alt="${item.title}"><span>${item.title}</span></a>`;
 
     if (item.level == 0) {
       level0.style.display = "inline";
-      insertAfter(level0, course);
+      line0.appendChild(course);
     } else if (item.level == 1) {
       level1.style.display = "inline";
-      insertAfter(level1, course);
+      line1.appendChild(course);
     } else if (item.level == 2) {
       level2.style.display = "inline";
-      insertAfter(level2, course);
+      line2.appendChild(course);
     } else {
       insertAfter(level0, course);
     }
