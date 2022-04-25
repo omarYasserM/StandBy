@@ -61,6 +61,7 @@ header > ul > li:last-child:hover {
 }
 header > i {
   display: none !important;
+  cursor: pointer;
 }
 
 
@@ -104,9 +105,33 @@ header > ul > div:hover{
   header > i {
     display: block !important;
     font-size: 32px !important;
+    z-index: 100px;
+    position: absolute;
+    right: 10px;
   }
   header > ul {
-    display: none;
+    z-index: 0;
+    margin-left: 0;
+    width: 200px;
+    background-color: #3a506b;
+    flex-direction: column;
+    position: fixed;
+    right: -200px;
+    height: 100vh;
+    padding: 100px 0;
+    top:0;
+    align-items: flex-start;
+    font-size: larger;    
+
+  }
+  header > ul > * {
+    height: 40px;
+    width: 100%;
+    margin-left:0;
+  }
+   header > ul > *:nth-child(2n) {
+     background-color: #4a607b;
+     border-radius: 0 !important;
   }
 }
 footer {

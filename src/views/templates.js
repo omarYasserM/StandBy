@@ -1,6 +1,7 @@
 import "../index.css";
-
+import { MenuStore } from "../js/controller/state.js";
 const header = document.querySelector(".header");
+const mState = MenuStore();
 if (header) {
   header.innerHTML = `
    <header>   
@@ -22,11 +23,21 @@ if (header) {
         </div>
         <li><a href="#" class="logout">Log out</a></li>
     </ul>
-    <i class="fa fa-bars navmenu" aria-hidden="true"></i>
+    <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>
     `;
+  document.querySelector("#hamburger").addEventListener("click", () => {
+    if (mState.state() == false) mState.setState(true);
+    else mState.setState(false);
+  });
 }
 
+const toggleMenu = () => {
+  if (mState.state() == true)
+    document.querySelector("header > ul").style.right = "0px";
+  else document.querySelector("header > ul").style.right = "-200px";
+};
+mState.addListener(toggleMenu);
 const footer = document.querySelector(".footer");
 if (footer) {
   footer.innerHTML = `<footer>   
