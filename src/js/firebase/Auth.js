@@ -1,11 +1,17 @@
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "./index.js";
+
 // AuthState
-auth.onAuthStateChanged((user) => {
-  if (user) {
-    if (window.location.pathname != "/StandBy/views/categories")
-      window.location = "/StandBy/views/signup";
-  } else {
-    if (window.location.pathname != "/StandBy/views/signUp")
-      window.location = "/StandBy/views/home";
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    if (window.location.pathname != "/public/signup.html")
+      window.location = "/public/signup.html";
   }
 });
 
@@ -15,22 +21,23 @@ const signupForm = document.querySelector("#signup-form");
 if (signupForm) {
   signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    const username = signupForm["username"].value;
     const email = signupForm["email"].value;
     const password = signupForm["password"].value;
 
-    auth.createUserWithEmailAndPassword(email, password).then((cred) => {
+    createUserWithEmailAndPassword(auth, email, password).then((cred) => {
       const user = cred.user;
-      user
-        .updateProfile({
-          displayName: username,
-        })
+      updateProfile(user, {
+        displayName: username,
+      })
         .then(() => {
           console.log(`User:${username} created sucessfully`);
+          window.location = "/public/home.html";
         })
         .catch((error) => {
           console.error(error);
         });
+
       signupForm.reset();
     });
   });
@@ -45,8 +52,7 @@ if (loginForm) {
 
     const email = loginForm["email"].value;
     const password = loginForm["password"].value;
-
-    auth.signInWithEmailAndPassword(email, password).then((cred) => {
+    signInWithEmailAndPassword(auth, email, password).then((cred) => {
       console.log(cred.user);
       loginForm.reset();
     });
@@ -57,9 +63,7 @@ const logoutButton = document.querySelector(".logout");
 if (logoutButton) {
   logoutButton.addEventListener("click", (e) => {
     e.preventDefault();
-    firebase
-      .auth()
-      .signOut()
+    signOut(auth)
       .then(() => {
         console.log("signed out");
       })
