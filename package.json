@@ -26,10 +26,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@fortawesome/fontawesome-free": "^6.1.1",
->>>>>>> d9fa7506362a94462c2aeb4add4bb7028edd18d4
     "aos": "^2.3.4",
     "firebase": "^9.6.11",
     "google-fonts": "^1.0.0"

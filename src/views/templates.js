@@ -47,15 +47,15 @@ if (footer) {
   <span class="logo">StandBy</span>
   <div class="container">
       <div>
-          <span>About</span>
+      <span><a href="./home.html#about">About</a></span>
           <p>What is StandBy</p>
       </div>
       <div>
-          <span>Contact us</span>
+          <span><a href="./home.html#about">Contact us</a></span>
           <p>Your feedback matter</p>
       </div>
       <div>
-          <span>Guide</span>
+          <span><a href="./home.html#about">Guide</a></span>
           <p>How to use StandBy</p>
       </div>
   </div>

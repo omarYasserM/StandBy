@@ -7,6 +7,9 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
+button{
+  cursor: pointer;
+}
 .page-title{
   text-align: center;
   font-size: 50px;
@@ -31,7 +34,6 @@ width: 40%;
   background: #ddd;
   font-size: 16px;
   border: none;
-  cursor: pointer;
   height: 100%;
   }
   .search-container form{
@@ -64,6 +66,7 @@ width: 40%;
       min-width: 25%;
       margin: 15px;
       object-fit:cover;
+      cursor: pointer;
   }
   .more{
       background: transparent;

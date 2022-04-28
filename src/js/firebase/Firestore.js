@@ -19,3 +19,30 @@ export const getCollectionData = (collName, Adder) => {
       console.error(err.message);
     });
 };
+
+const test = [
+  {
+    link: "https://google.com",
+    level: 1,
+    thumbnail: "testimg.com",
+    title: "name of image",
+  },
+  {
+    link: "https://google.com",
+    level: 1,
+    thumbnail: "testimg.com",
+    title: "name of image",
+  },
+  {
+    link: "https://google.com",
+    level: 1,
+    thumbnail: "testimg.com",
+    title: "name of image",
+  },
+  {
+    link: "https://google.com",
+    level: 1,
+    thumbnail: "testimg.com",
+    title: "name of image",
+  },
+];
