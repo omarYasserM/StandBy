@@ -1,5 +1,7 @@
 import "../index.css";
 import { MenuStore } from "../js/controller/state.js";
+import "@fortawesome/fontawesome-free/css/all.css";
+
 const header = document.querySelector(".header");
 const mState = MenuStore();
 if (header) {
@@ -59,12 +61,12 @@ if (footer) {
   </div>
   <p></p>
   <div class="footer_social_media">
-      <a href="https://www.facebook.com" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-      <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-      <a href="https://www.instagram.com" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
-      <a href="https://mail.google.com" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></i></a>
+      <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></i></a>
+      <a href="https://mail.google.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
   </div>
   <p class="copyright">StandBy &copy; to Great Team.</p>
 
