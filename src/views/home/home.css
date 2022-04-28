@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+}
+.top-background , .feed-img{
+    background-image:url("educ.png") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.page-title{
+  text-align: center;
+  font-size: 50px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+   color: #0b132b;
+}
+.descr , .title{
+    font-size: 30px;
+    margin: 20px;
+}
+.search-container{
+max-width: 600px;
+width: 40%;
+}
+.search-container button {
+  padding: 10px;
+  background: #ddd;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  }
+  .search-container form{
+      display: flex;
+      justify-content:center ;
+      align-items: center;
+  }
+  .search-container button:hover {
+    background: #ccc;
+  }
+  .search-container input[type=text] {
+    padding: 10px;
+    font-size: 16px;
+    flex: 1;
+    border: none;
+    outline: none;
+    color: #0b132b;
+  }
+  .page-blocks{
+      text-align: center;
+      margin-top: 50px;
+  }
+  .title{
+      letter-spacing: 10px;
+      color: #0b132b;
+  }
+  .cat img{
+      height: 200px;
+      width: 290px;
+      min-width: 25%;
+      margin: 15px;
+      object-fit:cover;
+  }
+  .more{
+      background: transparent;
+      border: 2px solid #0b132b;
+      color: #0b132b;
+      font-weight: 300;
+      padding: 10px ;
+      margin:10px;
+      letter-spacing: 2px;
+  }
+  .more:hover{
+      background: #0b132b;
+      color: white;
+      transition: all 0.5s;
+  }
+  .flex-block{
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden;
+  }
+  .flex-item{
+    background: #0b132b;
+    color: white; 
+   width: 320px;
+   padding: 40px;
+   margin: 20px;
+  }
+  @media (max-width:426px) {
+    .flex-item{
+      margin: 10px 0;
+      width: 100vw;
+    }
+  }
+  
+  .block-label{
+      font-variant: small-caps;
+      font-size: 20px;
+      margin-bottom: 20px;
+       letter-spacing: 5px;
+  }
+  .block-desc{
+   text-align: justify;
+  }
+  
