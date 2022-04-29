@@ -10,8 +10,8 @@ import { auth } from "./index.js";
 // AuthState
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    if (window.location.pathname != "/public/signup.html")
-      window.location = "/public/signup.html";
+    if (window.location.pathname != "/signup.html")
+      window.location = "./signup.html";
   }
 });
 
@@ -32,7 +32,7 @@ if (signupForm) {
       })
         .then(() => {
           console.log(`User:${username} created sucessfully`);
-          window.location = "/public/home.html";
+          window.location = "/";
         })
         .catch((error) => {
           console.error(error);

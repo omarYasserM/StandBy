@@ -7,10 +7,10 @@ const mState = MenuStore();
 if (header) {
   header.innerHTML = `
    <header>   
-    <a href="./home.html"><span class="logo">StandBy</span></a>
+    <a href="./"><span class="logo">StandBy</span></a>
     <ul>
-        <li><a href="./home.html">Home</a></li>
-        <li><a href="#">Courses</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="./profile.html">Profile</a></li>
         <div>
             <li><a href="./categories.html">Career paths</a></li>
             <ul class="dropdown-content">
