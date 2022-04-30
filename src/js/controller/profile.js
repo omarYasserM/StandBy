@@ -2,36 +2,31 @@ import "../../views/profile/profile.css";
 import "../../views/templates.js";
 import { makeAlert } from "../../views/templates.js";
 
+const sectionNames = [
+  "overview",
+  "favorites",
+  "recommendations",
+  "notifications",
+];
 const sections = document.getElementsByTagName("section");
 let secNumber = sections.length;
 
-for (let i = 0; i < secNumber; i++) {
-  sections[i].style.display = "none";
-  sections[i].style.position = "absolute";
-}
 sections[0].style.display = "flex";
 sections[0].style.position = "static";
 
-document.getElementById("overview").addEventListener("click", () => {
-  var i = 0;
-  while (i < secNumber) {
-    sections[i].style.display = "none";
-    sections[i].style.position = "absolute";
-    i++;
-  }
-  sections[0].style.display = "flex";
-  sections[0].style.position = "static";
+sectionNames.forEach((sectionName) => {
+  document.getElementById(sectionName).addEventListener("click", () => {
+    var i = 0;
+    while (i < secNumber) {
+      sections[i].style.display = "none";
+      sections[i].style.position = "absolute";
+      i++;
+    }
+    sections[sectionNames.indexOf(sectionName)].style.display = "flex";
+    sections[sectionNames.indexOf(sectionName)].style.position = "static";
+  });
 });
-document.getElementById("favorites").addEventListener("click", () => {
-  var i = 0;
-  while (i < secNumber) {
-    sections[i].style.display = "none";
-    sections[i].style.position = "absolute";
-    i++;
-  }
-  sections[1].style.display = "flex";
-  sections[1].style.position = "static";
-});
+
 document.getElementById("badgeEarnInfo").addEventListener("click", () => {
   makeAlert(
     "<p>You earn badges by reaching milestones in different categories.<br>milestones includes watching time, watching specific courses, or taking category quiz (coming soon)</p>"
