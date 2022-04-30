@@ -208,6 +208,11 @@ footer > .container {
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  color:#3a506b;
+}
+.alertbox p {
+  font-weight: 600;
+  font-size: large;
 }
 .alertbox > button{
   margin:10px 0;
@@ -223,4 +228,25 @@ footer > .container {
 .alertbox > button:hover{
   background-color: #5bc0ec;
 
+}
+
+.video{
+  border: 0.1px gainsboro solid;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 6px;
+  margin: 20px 10px;    
+  width: 300px;
+  height: fit-content;
+  text-align: center;
+  transition: all 0.1s ease-in;   
+  position: relative;
+}
+.video:hover {
+  transform: scale(1.05);
+}
+.video img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }

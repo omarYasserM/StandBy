@@ -3,6 +3,7 @@ import "/src/views/templates.js";
 import "../firebase/Auth.js";
 import { CourseStore } from "./state.js";
 import { getCollectionData } from "../firebase/Firestore.js";
+import { makeAlert } from "../../views/templates.js";
 
 const cState = CourseStore();
 
@@ -41,7 +42,7 @@ const addCourses = () => {
   const line2 = document.getElementById("line-2");
   cState.state().map((item) => {
     const course = document.createElement("div");
-    course.className = "course" + i++;
+    course.className = "video";
     course.innerHTML = `<a target="_blank" href=${item.link} ><img src="${item.thumbnail}" alt="${item.title}"><span>${item.title}</span></a>`;
 
     if (item.level == 0) {
@@ -107,21 +108,9 @@ resetbtn.addEventListener("click", () => {
   getCollectionData(page, cState.setState);
 });
 requestbtn.addEventListener("click", () => {
-  const alert = document.createElement("div");
   const requestmsg = document.getElementById("request-input");
   if (requestmsg.value != "") {
-    alert.className = "alert";
-    alert.innerHTML = `
-    <div class="alertbox">
-    <h1>Thank you for the feedback, will be added soon</h1>
-    <button>OK</button>
-    </div>`;
-    document.body.appendChild(alert);
-    document
-      .querySelector(".alertbox > button")
-      .addEventListener("click", () => {
-        document.body.removeChild(alert);
-      });
+    makeAlert("Thanks for your feedback, we will add it soon");
     requestmsg.value = "";
   }
 });

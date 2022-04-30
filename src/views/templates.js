@@ -47,15 +47,15 @@ if (footer) {
   <span class="logo">StandBy</span>
   <div class="container">
       <div>
-      <span><a href="./home.html#about">About</a></span>
+      <span><a href="./#about">About</a></span>
           <p>What is StandBy</p>
       </div>
       <div>
-          <span><a href="./home.html#about">Contact us</a></span>
+          <span><a href="./#about">Contact us</a></span>
           <p>Your feedback matter</p>
       </div>
       <div>
-          <span><a href="./home.html#about">Guide</a></span>
+          <span><a href="./#about">Guide</a></span>
           <p>How to use StandBy</p>
       </div>
   </div>
@@ -74,3 +74,17 @@ if (footer) {
 </footer>`;
 }
 document.body.style.display = "block";
+
+export const makeAlert = (innerHTML) => {
+  const alert = document.createElement("div");
+  alert.className = "alert";
+  alert.innerHTML = `
+    <div class="alertbox">
+    ${innerHTML}
+    <button>OK</button>
+    </div>`;
+  document.body.appendChild(alert);
+  document.querySelector(".alertbox > button").addEventListener("click", () => {
+    document.body.removeChild(alert);
+  });
+};
