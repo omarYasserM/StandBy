@@ -10,8 +10,16 @@ import { auth } from "./index.js";
 // AuthState
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    if (window.location.pathname != "/signup.html")
+    if (
+      window.location.pathname !== "/signup.html" &&
+      window.location.pathname !== "/login.html"
+    )
       window.location = "./signup.html";
+  } else if (
+    window.location.pathname === "/signup.html" ||
+    window.location.pathname === "/login.html"
+  ) {
+    window.location = "/";
   }
 });
 
@@ -32,30 +40,27 @@ if (signupForm) {
       })
         .then(() => {
           console.log(`User:${username} created sucessfully`);
-          window.location = "/";
         })
         .catch((error) => {
           console.error(error);
         });
-
-      signupForm.reset();
     });
   });
 }
 
 // Login
-const loginForm = document.querySelector("#login-Form");
-
+const loginForm = document.querySelector("#login-form");
 if (loginForm) {
+  console.log("test");
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const email = loginForm["email"].value;
     const password = loginForm["password"].value;
-    signInWithEmailAndPassword(auth, email, password).then((cred) => {
-      console.log(cred.user);
-      loginForm.reset();
-    });
+    signInWithEmailAndPassword(auth, email, password)
+      .then((cred) => {})
+      .catch((error) => {
+        console.error(error);
+      });
   });
 }
 

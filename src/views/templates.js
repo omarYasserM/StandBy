@@ -88,3 +88,13 @@ export const makeAlert = (innerHTML) => {
     document.body.removeChild(alert);
   });
 };
+
+{
+  /* 
+  <div class="video"> 
+  <a target="_blank" href="link here" >
+    <img src="img src" alt="Title here">
+    <span>Title Here</span>
+  </a>
+</div> */
+}

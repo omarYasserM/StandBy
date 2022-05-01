@@ -1,13 +1,9 @@
 import "../../views/profile/profile.css";
 import "../../views/templates.js";
+import "../firebase/Auth.js";
 import { makeAlert } from "../../views/templates.js";
 
-const sectionNames = [
-  "overview",
-  "favorites",
-  "recommendations",
-  "notifications",
-];
+const sectionNames = ["overview", "favorites", "notifications"];
 const sections = document.getElementsByTagName("section");
 let secNumber = sections.length;
 

@@ -190,6 +190,7 @@ form > button{
     list-style: none;
     padding: 0;
     color: #12255C;
+    font-weight: 600;
 }
 .favorites ul > li:nth-child(2n) {
     background-color: #3a506b22;
@@ -218,8 +219,46 @@ section .video {
 section .video img{
     height: 120px;
 }
-
-
+.notifications{
+    width: 100%;
+    height: 100%;
+}
+.notifications_container{
+    height: 100%;
+}
+.notifications ul{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+.notifications li{
+    margin: 10px 0;
+}
+.notification{
+    border: #12255C66 0.2px solid;
+    width: 100%;
+    border-radius: 4px;
+    padding: 20px;
+}
+.notifications_menu {
+    border-bottom: #12255C11 solid 0.2px;
+    padding: 10px 0;
+}
+.notifications_menu > span{
+    background-color: #3a506b;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease-in;
+}
+.notifications_menu > span:nth-child(1):hover{
+    background-color: #f44336;
+}
+.notifications_menu > span:nth-child(2):hover{
+    background-color: #5BC0BE;
+}
 @media (max-width: 770px) {
     .inner_slider {
         width: 95%;
@@ -243,6 +282,9 @@ section .video img{
     }
     .favorites .categories_list{
         padding: 20px 15px 0 15px;
+    }
+    .notifications{
+        padding: 0 20px;
     }
 }
 @media (max-width:321px) {
