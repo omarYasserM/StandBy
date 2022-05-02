@@ -23,7 +23,7 @@ if (header) {
                 
             </ul>
         </div>
-        <li><a href="#" class="logout">Log out</a></li>
+        <li><a href="#" class="logout" id="auth-btn">Log out</a></li>
     </ul>
     <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>

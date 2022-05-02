@@ -1,5 +1,5 @@
 import { db } from "../firebase";
-import { collection, getDocs, getDoc, doc } from "@firebase/firestore";
+import { collection, getDocs, getDoc, doc, setDoc } from "@firebase/firestore";
 
 export const getCollectionData = (collName, Adder) => {
   let data_list = [];
@@ -18,6 +18,10 @@ export const getCollectionData = (collName, Adder) => {
     .catch((err) => {
       console.error(err.message);
     });
+};
+
+export const editDoc = async (collName, docName, newDoc) => {
+  await setDoc(doc(db, collName, docName), newDoc);
 };
 
 export const getUserData = async (UID) => {

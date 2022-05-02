@@ -12,7 +12,8 @@ onAuthStateChanged(auth, (user) => {
   if (!user) {
     if (
       window.location.pathname !== "/signup.html" &&
-      window.location.pathname !== "/login.html"
+      window.location.pathname !== "/login.html" &&
+      window.location.search.slice(0, 4) != "?id="
     )
       window.location = "./signup.html";
   } else if (
@@ -51,7 +52,6 @@ if (signupForm) {
 // Login
 const loginForm = document.querySelector("#login-form");
 if (loginForm) {
-  console.log("test");
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = loginForm["email"].value;
