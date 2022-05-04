@@ -7,10 +7,10 @@ const mState = MenuStore();
 if (header) {
   header.innerHTML = `
    <header>   
-    <a href="./home.html"><span class="logo">StandBy</span></a>
+    <a href="./"><span class="logo">StandBy</span></a>
     <ul>
-        <li><a href="./home.html">Home</a></li>
-        <li><a href="#">Courses</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="./profile.html">Profile</a></li>
         <div>
             <li><a href="./categories.html">Career paths</a></li>
             <ul class="dropdown-content">
@@ -23,7 +23,7 @@ if (header) {
                 
             </ul>
         </div>
-        <li><a href="#" class="logout">Log out</a></li>
+        <li><a href="#" class="logout" id="auth-btn">Log out</a></li>
     </ul>
     <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>
@@ -47,15 +47,15 @@ if (footer) {
   <span class="logo">StandBy</span>
   <div class="container">
       <div>
-          <span>About</span>
+      <span><a href="./#about">About</a></span>
           <p>What is StandBy</p>
       </div>
       <div>
-          <span>Contact us</span>
+          <span><a href="./#about">Contact us</a></span>
           <p>Your feedback matter</p>
       </div>
       <div>
-          <span>Guide</span>
+          <span><a href="./#about">Guide</a></span>
           <p>How to use StandBy</p>
       </div>
   </div>
@@ -74,3 +74,27 @@ if (footer) {
 </footer>`;
 }
 document.body.style.display = "block";
+
+export const makeAlert = (innerHTML) => {
+  const alert = document.createElement("div");
+  alert.className = "alert";
+  alert.innerHTML = `
+    <div class="alertbox">
+    ${innerHTML}
+    <button>OK</button>
+    </div>`;
+  document.body.appendChild(alert);
+  document.querySelector(".alertbox > button").addEventListener("click", () => {
+    document.body.removeChild(alert);
+  });
+};
+
+{
+  /* 
+  <div class="video"> 
+  <a target="_blank" href="link here" >
+    <img src="img src" alt="Title here">
+    <span>Title Here</span>
+  </a>
+</div> */
+}

@@ -119,17 +119,7 @@ aside button:hover {
   min-height: 570px;
 
 }
-.courses .course-line > div {
-  border: 0.1px gainsboro solid;
-  cursor: pointer;
-  font-weight: 400;
-  border-radius: 6px;
-  margin: 20px 10px;
-  width: 300px;
-  height: fit-content;
-  text-align: center;
-  transition: all 0.1s ease-in;
-}
+
 @media screen and (max-width: 660px) {
   .courses {
     justify-content: center;
@@ -140,14 +130,7 @@ aside button:hover {
     background-size: cover;
   }
 }
-.courses .course-line > div:hover {
-  transform: scale(1.05);
-}
-.courses .course-line > div img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
+
 .courses h2 {
   margin: 8px 0 0 20px;
   border-top: 0.1px solid #3a506b22;

@@ -6,3 +6,7 @@ import "/node_modules/aos/dist/aos.css";
 AOS.init(
    { duration :1400,}
 );
+
+document.getElementById("categories-btn").addEventListener("click", () => {
+  window.location = "./categories.html";
+});
