@@ -1,5 +1,5 @@
 import { db } from "../firebase";
-import { collection, getDocs } from "@firebase/firestore";
+import { collection, getDocs, getDoc, doc, setDoc } from "@firebase/firestore";
 
 export const getCollectionData = (collName, Adder) => {
   let data_list = [];
@@ -20,29 +20,11 @@ export const getCollectionData = (collName, Adder) => {
     });
 };
 
-const test = [
-  {
-    link: "https://google.com",
-    level: 1,
-    thumbnail: "testimg.com",
-    title: "name of image",
-  },
-  {
-    link: "https://google.com",
-    level: 1,
-    thumbnail: "testimg.com",
-    title: "name of image",
-  },
-  {
-    link: "https://google.com",
-    level: 1,
-    thumbnail: "testimg.com",
-    title: "name of image",
-  },
-  {
-    link: "https://google.com",
-    level: 1,
-    thumbnail: "testimg.com",
-    title: "name of image",
-  },
-];
+export const editDoc = async (collName, docName, newDoc) => {
+  await setDoc(doc(db, collName, docName), newDoc);
+};
+
+export const getUserData = async (UID) => {
+  const userSnap = await getDoc(doc(db, "users", UID));
+  return userSnap.data();
+};

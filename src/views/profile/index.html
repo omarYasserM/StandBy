@@ -11,84 +11,41 @@
     <span class="header"></span>
  
     <main>
-        <h1>Profile</h1>
+        <h1>Profile</h1> <span id="share-btn"><i class="fa-solid fa-share fa-lg"></i></span>
         <ul class="inner_nav">
             <li id="overview">OverView</li>
             <li id="favorites">Favorites</li>
-            <li id="recommendations">Recommendations</li>
             <li id="notifications">Notifications</li>
         </ul>
         <div class="inner_slider">
             <section class="slide">
             
-                <form>
+                <form id="info_form">
                     <h2>Personal Info</h2>
                     <div class="field">
                         <label for="UserName">UserName:</label>
-                        <input type="text" placeholder="UserName" id="UserName" value="Omar Yasser">
+                        <input type="text" placeholder="UserName" name="UserName" value="Omar Yasser">
                     </div>
                     
                     <div class="field"> 
                         <label for="Email">Email:</label>
-                        <span>Omar@gmail.com</span>
+                        <span id="formEmail">Omar@gmail.com</span>
                     </div>
                     <div class="field">
                         <label for="Location">Location:</label>
-                        <input type="text" placeholder="UserName" id="Location" value="Egypt"></div>
+                        <input type="text" placeholder="Location" name="Location" value="Egypt"></div>
                     
                     <div class="field">
                         <label for="UserName">Interests:</label>
-                        <input type="text" placeholder="UserName" id="UserName" value="FrontEnd development"></div>
+                        <input type="text" placeholder="Interests" name="Interests" value="FrontEnd development"></div>
                     
-                    <button type="submit">Edit</button>
+                    <button name="btn" type="submit">Edit</button>
                 </form>
                 <div class="badges_container">
                     <h2>Badges</h2>
-                    <div class="badges">
+                    <div id="badges">
                     
-                        <div class="badge golden"><span>WebDev</span>
-                            <ul>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                            </ul>
-                            
-                        </div>
-                        <div class="badge"><span>EN</span>
-                            <ul>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-
-                            </ul>
-                          
-                        </div>
-                        <div class="badge"><span>CSS</span>
-                            <ul>
-                                <li><i class="fa-solid fa-star"></i></li>
-
-                            </ul>
-                          
-                        </div>
-                        <div class="badge"><span>HTML</span>
-                            <ul>                                
-                                <li><i class="fa-solid fa-star"></i></li>
-                            </ul>
-                          
-                        </div>
-                        <div class="badge"><span>FR</span>
-                            <ul>
-                                <li><i class="fa-solid fa-star"></i></li>
-                            </ul>
-                          
-                        </div>
-                        <div class="badge"><span>JS</span>
-                            <ul>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-    
-                            </ul>
-                          
-                        </div>
+                       
                         
     
         
@@ -142,7 +99,25 @@
                 </div>
                 </div>   
             </section>
+
             <section class="slide">
+                <div class="notifications">
+                    <div class="notifications_menu">
+                        <span id="delete-btn">DELETE</span> <span id="selectall-btn">SELECT ALL</span>
+                    </div>
+                    <div class="notifications_container">
+                        <ul id="notificationsList">
+                            
+                        </ul>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="slide">
+                <div class="loader_container">
+                    <div class="loader"></div>
+
+                </div>
 
             </section>
         </div>

@@ -23,7 +23,7 @@ if (header) {
                 
             </ul>
         </div>
-        <li><a href="#" class="logout">Log out</a></li>
+        <li><a href="#" class="logout" id="auth-btn">Log out</a></li>
     </ul>
     <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>
@@ -88,3 +88,13 @@ export const makeAlert = (innerHTML) => {
     document.body.removeChild(alert);
   });
 };
+
+{
+  /* 
+  <div class="video"> 
+  <a target="_blank" href="link here" >
+    <img src="img src" alt="Title here">
+    <span>Title Here</span>
+  </a>
+</div> */
+}
