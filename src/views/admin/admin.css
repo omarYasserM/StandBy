@@ -1,4 +1,3 @@
-
 main > * {
     background-color: #F6F9F8;
     box-shadow: 0 3px 3px -2px rgb(39 44 51 / 10%), 0 3px 4px 0 rgb(39 44 51 / 4%), 0 1px 8px 0 rgb(39 44 51 / 2%);
@@ -17,21 +16,22 @@ body {
 main{
     padding: 5px;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 .search{
     font-size: xx-large;
+    /* width: 250px;*/
+    max-width: 300px;
     min-width: 250px;
-    max-width: 250px;
-    /* flex: 1 1 150px; */
-    position: fixed;
-    z-index: 1;
+    flex-grow: 1;
 }
 .search .sidebar{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    top: 10px;
 }
 .search .list{
     overflow-y:scroll;
@@ -59,7 +59,7 @@ main{
 
 .search .sidebar h2{
     font-size: xx-large;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     /* background-color: #5bc0be; */
     background-color: #3a506b;
     color: white;
@@ -119,11 +119,11 @@ details:hover{
     position: relative;
     align-items: center;
     display: flex;
-    background-color: #0b132b;
+    background-color: #3a506b;
     color: white;
     padding: 5px;
     width: 90%;
-    height: 30px;
+    height: 35px;
     border-radius: 6px;
     margin-bottom: 5px;
   }
@@ -172,13 +172,10 @@ details:hover{
 .content  {
     display: flex;
     flex-direction: column;
-    height:fit-content;
     font-size: larger;
-    flex: 1 1 900px;
+    flex-grow: 1;
     letter-spacing: 1.5px;
-    /* padding-top: 50px; */
     padding: 50px 20px 20px 20px;
-    margin-left: 280px;
 }
 .content .hd {
     margin: 10px 0 20px 50px;
@@ -209,10 +206,11 @@ small{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
 }
 
 .content .container .rows .colm1{
-    flex:  2 1 250px;
+    flex:  18 1 300px;
 }
 .content .container .rows .p-s{
     margin-bottom: 15px;
@@ -280,7 +278,7 @@ small{
     display: flex;
     overflow-y:scroll;
     border-radius: 8px;
-    width: 610px;
+    width: 450px;
     gap: 5px;
     
 }
@@ -312,8 +310,7 @@ small{
 
 
 .content .container .rows .colm2{
-    flex: 1 1 350px;
-    /* width: 300px; */
+    flex: 1 1 250px;
 }
 .content .container .rows .colm2 .card {
     display: flex;
@@ -328,7 +325,7 @@ small{
     display: grid;
     place-items: center;
     gap: 10px;
-    padding: 20px;
+    padding: 20px 10px 20px 10px;
 }
 .content .container .rows .colm2 .card1  button{
     width: 200px;
@@ -358,6 +355,8 @@ small{
 }
 .content .container .rows .colm2 .card2 .card-body .course-level{
     margin-left: 20px;
+    width: 48px;
+    height: 40px;
 }
 
 
@@ -370,4 +369,17 @@ small{
     width: 45%;
     min-height: 40px;
     font-size: 16px;
+}
+
+@media (max-width:800px) {
+    main{
+      flex-direction: column;
+    }
+    .search{
+        flex-grow: 1;
+        max-width: 800px;
+    }
+    .comments{
+        width: 80vw !important;
+    }
 }
