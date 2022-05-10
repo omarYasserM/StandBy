@@ -5,6 +5,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import { makeAlert } from "../../views/templates.js";
 import { auth } from "./index.js";
 
 // AuthState
@@ -33,19 +34,24 @@ if (signupForm) {
     const username = signupForm["username"].value;
     const email = signupForm["email"].value;
     const password = signupForm["password"].value;
+    const repassword = signupForm["repassword"].value;
 
-    createUserWithEmailAndPassword(auth, email, password).then((cred) => {
-      const user = cred.user;
-      updateProfile(user, {
-        displayName: username,
-      })
-        .then(() => {
-          console.log(`User:${username} created sucessfully`);
+    if (repassword != password) {
+      makeAlert("Password doesn't match");
+    } else {
+      createUserWithEmailAndPassword(auth, email, password).then((cred) => {
+        const user = cred.user;
+        updateProfile(user, {
+          displayName: username,
         })
-        .catch((error) => {
-          console.error(error);
-        });
-    });
+          .then(() => {
+            console.log(`User:${username} created sucessfully`);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
+    }
   });
 }
 

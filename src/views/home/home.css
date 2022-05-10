@@ -1,6 +1,9 @@
 body{
     margin: 0;
 }
+body > *{
+  margin-bottom: 50px;
+}
 .top-background img{
     position: absolute;
     top:0;
@@ -169,16 +172,18 @@ width: 40%;
       width: 100vw;
     }
   }
-  
+  .cor-img {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
   .cor-img img{
     height: 200px;
-    width: 200px;
-    min-width: 20%;
+    width: 300px;
     margin: 15px;
     object-fit:cover; 
   }
   
-  .space{
-      height: 50px;
+  div ::-webkit-scrollbar{
+    display: none;
   }
-  
