@@ -46,6 +46,7 @@
 
 }
 .formContainer button {
+  cursor: pointer;
   margin-top: auto;
   background-color: #3a506b;
   border: 2px solid #3a506b;
