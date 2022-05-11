@@ -23,11 +23,12 @@ if (header) {
                 
             </ul>
         </div>
-        <li><a href="#" class="logout" id="auth-btn">Log out</a></li>
+        <li><a href="#" id="logout-btn">Log out</a></li>
     </ul>
     <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>
     `;
+
   document.querySelector("#hamburger").addEventListener("click", () => {
     if (mState.state() == false) mState.setState(true);
     else mState.setState(false);
