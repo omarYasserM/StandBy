@@ -1,6 +1,7 @@
 import "../index.css";
 import { MenuStore } from "../js/controller/state.js";
 import "@fortawesome/fontawesome-free/css/all.css";
+import { logOut } from "../js/firebase/Auth";
 
 const header = document.querySelector(".header");
 const mState = MenuStore();
@@ -28,6 +29,14 @@ if (header) {
     <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>
     `;
+
+  const logoutButton = document.querySelector("#logout-btn");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      logOut();
+    });
+  }
 
   document.querySelector("#hamburger").addEventListener("click", () => {
     if (mState.state() == false) mState.setState(true);

@@ -41,7 +41,10 @@
 .formContainer span {
   margin: 0 auto;
 }
+.formContainer a{
+  color:#5BC0BE !important;
 
+}
 .formContainer button {
   margin-top: auto;
   background-color: #3a506b;

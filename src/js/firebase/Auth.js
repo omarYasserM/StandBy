@@ -6,7 +6,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { makeAlert } from "../../views/templates.js";
-import router, { route, routeTo } from "../router/index.js";
+import { route, routeTo } from "../router/index.js";
 import { editDoc } from "./Firestore.js";
 import { auth } from "./index.js";
 
@@ -29,9 +29,17 @@ import { auth } from "./index.js";
 
 // Signup
 
+/**
+ * High level function used to sign up
+ * @param  {String} email Email have to be unique and will be used as a Key.
+ * @param  {String} password password have to be atleast 8 alphanumeric characters.
+ * @param  {String} username Username of the user can be changed later.
+ * @return {String} returns Error message if it fails, if it's success it redirect the page to home
+ */
 export const signUp = async (email, password, username) => {
-  await createUserWithEmailAndPassword(auth, email, password).then(
-    async (cred) => {
+  let err;
+  await createUserWithEmailAndPassword(auth, email, password)
+    .then(async (cred) => {
       const user = cred.user;
       const data = {
         badges: [],
@@ -44,28 +52,42 @@ export const signUp = async (email, password, username) => {
         notifications: ["Welcome to StandBy!"],
       };
       await editDoc("users", cred.user.uid, data);
-      router(route.Home);
-    }
-  );
+      routeTo(route.Home);
+    })
+    .catch((error) => {
+      err = error;
+    });
+  return err;
 };
 
+/**
+ * High level function used to Log in
+ * @param  {String} email Email have to be unique and will be used as a Key.
+ * @param  {String} password password have to be atleast 8 alphanumeric characters.
+ * @return {<Promise>String} returns Error message if it fails, if it's success it redirect the page to home
+ */
 export const login = async (email, password) => {
-  await signInWithEmailAndPassword(auth, email, password).catch((error) => {
-    console.error(error);
-  });
-  routeTo(route.Home);
+  let err = "";
+  await signInWithEmailAndPassword(auth, email, password)
+    .then(() => routeTo(route.Home))
+    .catch((error) => {
+      err = error;
+    });
+  return err;
 };
 
-const logoutButton = document.querySelector("#logout-btn");
-if (logoutButton) {
-  logoutButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    signOut(auth)
-      .then(() => {
-        routeTo(route.SignUp);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
-}
+/**
+ * High level function used to Log out
+ * @return {<Promise>String} returns Error message if it fails, if it's success it redirect the page to SignUp
+ */
+export const logOut = async () => {
+  let err;
+  await signOut(auth)
+    .then(() => {
+      routeTo(route.SignUp);
+    })
+    .catch((error) => {
+      err = error;
+    });
+  return err;
+};

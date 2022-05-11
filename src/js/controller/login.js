@@ -9,5 +9,5 @@ loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = loginForm["email"].value;
   const password = loginForm["password"].value;
-  login(email, password);
+  login(email, password).then((s) => alert(s));
 });
