@@ -1,41 +1,15 @@
-let CourseListeners = [];
-let CourseState = [];
+export class Store {
+  state;
+  listeners = [];
+  constructor(initialState) {
+    this.state = initialState;
+    this.listeners = [];
+  }
 
-let menuListeners = [];
-let menuState = false;
-
-let userListeners = [];
-let userState = null;
-
-export const MenuStore = () => {
-  const state = () => menuState;
-  const setState = (isOpen) => {
-    menuState = isOpen;
-    menuListeners.forEach((item) => item());
+  setState = (state) => {
+    this.state = state;
+    this.listeners.forEach((listener) => listener());
   };
-  const addListener = (listener) => menuListeners.push(listener);
 
-  return { setState, addListener, state };
-};
-
-export const CourseStore = () => {
-  const state = () => CourseState;
-  const setState = (list) => {
-    CourseState = list;
-    CourseListeners.forEach((item) => item());
-  };
-  const addListener = (listener) => CourseListeners.push(listener);
-
-  return { setState, addListener, state };
-};
-
-export const UserStore = () => {
-  const state = () => userState;
-  const setState = (user) => {
-    userState = user;
-    userListeners.forEach((item) => item());
-  };
-  const addListener = (listener) => userListeners.push(listener);
-
-  return { setState, addListener, state };
-};
+  addListener = (listener) => this.listeners.push(listener);
+}

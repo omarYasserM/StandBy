@@ -1,10 +1,32 @@
 import "../index.css";
-import { MenuStore } from "../js/controller/state.js";
+// import { MenuStore } from "../js/controller/state.js";
+import { Store } from "../js/controller/state.js";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { logOut } from "../js/firebase/Auth";
 
+let MenuStore = new Store(false);
+/**
+ *
+ * @param {String} text what to display on the CTA header button
+ * @param {Function} callback what to do when the button is clicked
+ */
+export const setHeaderCTA = (
+  text = "Log out",
+  callback = () => {
+    logOut();
+  }
+) => {
+  const ctaButton = document.querySelector("#header-cta-btn");
+  ctaButton.innerHTML = text;
+  if (ctaButton) {
+    ctaButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      callback();
+    });
+  }
+};
+
 const header = document.querySelector(".header");
-const mState = MenuStore();
 if (header) {
   header.innerHTML = `
    <header>   
@@ -24,32 +46,26 @@ if (header) {
                 
             </ul>
         </div>
-        <li><a href="#" id="logout-btn">Log out</a></li>
+        <li><a href="#" id="header-cta-btn">Log out</a></li>
     </ul>
     <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>
     `;
 
-  const logoutButton = document.querySelector("#logout-btn");
-  if (logoutButton) {
-    logoutButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      logOut();
-    });
-  }
-
   document.querySelector("#hamburger").addEventListener("click", () => {
-    if (mState.state() == false) mState.setState(true);
-    else mState.setState(false);
+    if (MenuStore.state == false) MenuStore.setState(true);
+    else MenuStore.setState(false);
   });
 }
 
 const toggleMenu = () => {
-  if (mState.state() == true)
+  if (MenuStore.state == true)
     document.querySelector("header > ul").style.top = "0px";
   else document.querySelector("header > ul").style.top = "-300px";
 };
-mState.addListener(toggleMenu);
+
+MenuStore.addListener(toggleMenu);
+
 const footer = document.querySelector(".footer");
 if (footer) {
   footer.innerHTML = `<footer>   
@@ -83,22 +99,33 @@ if (footer) {
 
 </footer>`;
 }
-document.body.style.display = "block";
 
-export const makeAlert = (innerHTML) => {
+/**
+ *
+ * @param {String} innerHTML the HTML you want inside the alert
+ * @param {Function} callback the function to execute after user press ok(if needed)
+ * @param {String} buttonText the text of the Alert button
+ */
+export const makeAlert = (
+  innerHTML,
+  buttonText = "OK",
+  callback = () => {}
+) => {
   const alert = document.createElement("div");
   alert.className = "alert";
   alert.innerHTML = `
     <div class="alertbox">
     ${innerHTML}
-    <button>OK</button>
+    <button>${buttonText}</button>
     </div>`;
   document.body.appendChild(alert);
   document.querySelector(".alertbox > button").addEventListener("click", () => {
     document.body.removeChild(alert);
+    callback();
   });
 };
 
+//this is a video snippet, to reuse
 {
   /* 
   <div class="video"> 
@@ -108,3 +135,5 @@ export const makeAlert = (innerHTML) => {
   </a>
 </div> */
 }
+
+document.body.style.display = "block";

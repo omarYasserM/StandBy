@@ -46,7 +46,7 @@ button{
   text-align: center;
   align-items: center;
   vertical-align: top;
-  z-index: 100;
+  z-index: 90;
    color:white;
 }
 .descr , .title{
@@ -173,16 +173,16 @@ width: 40%;
     }
   }
   .cor-img {
+    width: 100vw;
+    overflow-x: scroll;
+  }
+  #newCourses{
+    width: fit-content;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
   }
-  .cor-img img{
-    height: 200px;
-    width: 300px;
-    margin: 15px;
-    object-fit:cover; 
-  }
+  
   
   div ::-webkit-scrollbar{
     display: none;

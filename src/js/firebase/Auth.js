@@ -3,29 +3,20 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-  updateProfile,
 } from "firebase/auth";
-import { makeAlert } from "../../views/templates.js";
+import { setHeaderCTA } from "../../views/templates.js";
 import { route, routeTo } from "../router/index.js";
 import { editDoc } from "./Firestore.js";
 import { auth } from "./index.js";
 
-// AuthState
-// onAuthStateChanged(auth, (user) => {
-//   if (!user) {
-//     if (
-//       window.location.pathname !== "/signup.html" &&
-//       window.location.pathname !== "/login.html" &&
-//       window.location.search.slice(0, 4) != "?id="
-//     )
-//       window.location = "./signup.html";
-//   } else if (
-//     window.location.pathname === "/signup.html" ||
-//     window.location.pathname === "/login.html"
-//   ) {
-//     window.location = "/";
-//   }
-// });
+export const CheckUser = () =>
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setHeaderCTA("Log out", () => logOut());
+    } else {
+      setHeaderCTA("Log in", () => routeTo(route.Login));
+    }
+  });
 
 // Signup
 
@@ -45,7 +36,7 @@ export const signUp = async (email, password, username) => {
         badges: [],
         info: {
           interests: "Add interests",
-          location: "add location",
+          location: "Add location",
           username: username,
           email: cred.user.email,
         },

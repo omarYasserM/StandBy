@@ -2,6 +2,10 @@ import "/src/views/signup/signUp.css";
 import "/src/views/templates.js";
 import "../firebase/Auth.js";
 import { signUp } from "../firebase/Auth.js";
+import { setHeaderCTA } from "../../views/templates.js";
+import { route, routeTo } from "../router/index.js";
+
+setHeaderCTA("Login", () => routeTo(route.Login));
 
 const signupForm = document.querySelector("#signup-form");
 if (signupForm) {
@@ -15,7 +19,7 @@ if (signupForm) {
     if (repassword != password) {
       makeAlert("Password doesn't match");
     } else {
-      signUp(email, password, username).then((s) => alert(s));
+      signUp(email, password, username);
     }
   });
 }

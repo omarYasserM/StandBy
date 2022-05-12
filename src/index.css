@@ -62,6 +62,7 @@ header > ul > li:last-child:hover {
 }
 header > i {
   display: none !important;
+  z-index: 150;
   cursor: pointer;
 }
 
@@ -72,7 +73,7 @@ header ul.dropdown-content {
   background-color: #3a506b;
   min-width: fit-content;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 100;
   border-radius: 6px;
   list-style: none;
   padding: 0px;
@@ -106,12 +107,11 @@ header > ul > div:hover{
   header > i {
     display: block !important;
     font-size: 32px !important;
-    z-index: 100px;
     position: absolute;
     right: 10px;
   }
   header > ul {
-    z-index: 0;
+    z-index: 100;
     margin: 0;
     width: 100%;
     background-color: #3a506b;

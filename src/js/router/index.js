@@ -7,6 +7,10 @@ export const route = {
   Login: "login.html",
 };
 
+/**
+ * A function to control navigation logic
+ * @param {route} route where you want to navigate
+ */
 export const routeTo = (route) => {
   window.location.pathname = route;
 };
