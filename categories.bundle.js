@@ -306,7 +306,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"route\": () => (/* binding */ route),\n/* harmony export */   \"routeTo\": () => (/* binding */ routeTo)\n/* harmony export */ });\nconst route = {\r\n  Home: \"\",\r\n  Admin: \"admin.html\",\r\n  Profile: \"profile.html\",\r\n  SignUp: \"signup.html\",\r\n  Categories: \"categories.html\",\r\n  Login: \"login.html\",\r\n};\r\n\r\n/**\r\n * A function to control navigation logic\r\n * @param {route} route where you want to navigate\r\n */\r\nconst routeTo = (route) => {\r\n  window.location.pathname = `${window.location.pathname}/${route}`;\r\n};\r\n\n\n//# sourceURL=webpack://learningwebsite/./src/js/router/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"route\": () => (/* binding */ route),\n/* harmony export */   \"routeTo\": () => (/* binding */ routeTo)\n/* harmony export */ });\nconst route = {\r\n  Home: \"\",\r\n  Admin: \"admin.html\",\r\n  Profile: \"profile.html\",\r\n  SignUp: \"signup.html\",\r\n  Categories: \"categories.html\",\r\n  Login: \"login.html\",\r\n};\r\n\r\n/**\r\n * A function to control navigation logic\r\n * @param {route} route where you want to navigate\r\n */\r\nconst routeTo = (route) => {\r\n  window.location.pathname = `StandBy/${route}`;\r\n};\r\n\n\n//# sourceURL=webpack://learningwebsite/./src/js/router/index.js?");
 
 /***/ }),
 
