@@ -77,7 +77,7 @@ if (footer) {
           <p>What is StandBy</p>
       </div>
       <div>
-          <span><a href="./#about">Contact us</a></span>
+          <span><a href="./contactUs.html">Contact us</a></span>
           <p>Your feedback matter</p>
       </div>
       <div>

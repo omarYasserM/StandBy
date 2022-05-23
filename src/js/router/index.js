@@ -12,5 +12,5 @@ export const route = {
  * @param {route} route where you want to navigate
  */
 export const routeTo = (route) => {
-  window.location.pathname = route;
+  window.location.pathname = `StandBy/${route}`;
 };
