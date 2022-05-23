@@ -35,7 +35,7 @@ onAuthStateChanged(auth, (user) => {
 
   document.getElementById("share-btn").addEventListener("click", () => {
     navigator.clipboard.writeText(
-      `${window.location.host}/Standby/profile.html?id=${wantedUser}`
+      `${window.location.host}/StandBy/profile.html?id=${wantedUser}`
     );
     makeAlert("Copied Profile URL");
   });

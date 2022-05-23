@@ -26,7 +26,7 @@ module.exports = {
   mode: "development",
   entry: { ...multipleEntries, home: `./src/js/controller/home.js` },
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "StandBy"),
     filename: "[name].bundle.js",
   },
   module: {
