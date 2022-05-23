@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us</title>
+  <script defer src="contactUs.bundle.js"></script></head>
+  <body style="display: hidden">
+    <span class="header"></span>
+    <h1>Contact Us</h1>
+
+    <div class="row">
+      <div class="contactContainer">
+        <form>
+          <label>
+            Type of message:
+            <select name="typeOfFeedback" id="type-of-feedback">
+              <option value="1">Feature Request</option>
+              <option value="2">Technical Issue Report</option>
+              <option value="3">Content Report</option>
+            </select>
+          </label>
+
+          <label>Email:<input type="email" name="Email" id="" /></label>
+          <label>Subject:<input type="text" name="subject" id="" /></label>
+          <label>Message:<textarea name="message"></textarea></label>
+          <button type="submit">Contact us</button>
+          <span id="feedback-msg">
+            Thanks for your feedback! we will reach you asap.
+          </span>
+        </form>
+      </div>
+      <div class="feedback">
+        <div class="imgBackground"></div>
+        <div class="whiteBackground"></div>
+      </div>
+    </div>
+
+    <span class="footer"></span>
+  </body>
+</html>

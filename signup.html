@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StandBy - SignUp</title>
+
+<script defer src="signup.bundle.js"></script></head>
+<body style="display: none;">
+    <span class="header"></span>
+    <div class="formContainer">
+        <div class="formHeader"><h2>Create Account</h2></div>
+     
+     
+        <form id="signup-form">
+
+        <label >Username </label>
+        <div>        
+        <i class="fa-solid fa-user"></i>
+        <input id="username" type="text"placeholder="Enter Username" required>
+        </div>
+
+        <label >Email</label>
+        <div>
+            <i class="fa-solid fa-envelope"></i>
+            <input  id="email" type="email"placeholder="Enter Email" required>
+        </div>
+        
+        <label >Password </label>
+        <div>
+        <i class="fa-solid fa-key"></i>
+        <input id="password" type="password"placeholder="Enter password" required>
+        </div>
+         
+        <label >Confirm password </label>
+        <div>
+        <i class="fa-solid fa-key"></i>
+        <input id="repassword" type="password"placeholder="Enter  password" required>
+        </div>
+        
+        <button type="submit">Sign Up</button>
+        <span>Already registered? <a href="./login.html">Login</a></span>
+        </form>
+     </div>
+
+</body>
+</html>

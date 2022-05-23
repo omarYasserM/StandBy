@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+<script defer src="admin.bundle.js"></script></head>
+<body style="display:none">
+    <span class="header">hi</span>
+    <main>
+        <section class="search">
+            
+            <div class="sidebar" >
+                <h2>categories</h2>
+                <div class="searchBox">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search">
+                    <button class="submitbutton" type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="list">
+                    <details id="d1">
+                        <summary>IT</summary>
+                        <ul>
+                            <li><a href="#">Beginning Graphic Design: Color</a></li>
+                            <li><a href="#">Beginning Graphic Design: Typography</a></li>
+                            <li><a href="#">Beginning Graphic Design: Fundamentals</a></li>
+                            <li><a href="#">Rethinking the Client Dynamic— Improve the process for a better experience</a></li>
+                            <li><a href="#">Improve Your Typography: Poster Design Critique</a></li>
+                        </ul>
+                    
+                    </details>
+                    <details id="d2">
+                        <summary>Programming</summary>
+                        <ul>
+                            <li><a href="#">hi</a></li>
+                            <li><a href="#">my</a></li>
+                            <li><a href="#">name</a></li>
+                            <li><a href="#">is</a></li>
+                            <li><a href="#">Amr</a></li>
+                        </ul>
+                    </details>
+                    <details id="d3">
+                        <summary>Computer networks</summary>
+                        <ul>
+                            <li><a href="#">hi</a></li>
+                            <li><a href="#">my</a></li>
+                            <li><a href="#">name</a></li>
+                            <li><a href="#">is</a></li>
+                            <li><a href="#">Amr</a></li>
+                        </ul>
+                    </details>
+                    <details id="d4">
+                        <summary>Accounting</summary>
+                        <ul>
+                            <li><a href="#">hi</a></li>
+                            <li><a href="#">my</a></li>
+                            <li><a href="#">name</a></li>
+                            <li><a href="#">is</a></li>
+                            <li><a href="#">Amr</a></li>
+                        </ul>
+                    </details>
+                    <details id="d5">
+                        <summary>Graphic design</summary>
+                        <ul>
+                            <li><a href="#">hi</a></li>
+                            <li><a href="#">my</a></li>
+                            <li><a href="#">name</a></li>
+                            <li><a href="#">is</a></li>
+                            <li><a href="#">Amr</a></li>
+                        </ul>
+                    </details>
+                    <details id="d6">
+                        <summary>Language</summary>
+                        <ul>
+                            <li><a href="#">hi</a></li>
+                            <li><a href="#">my</a></li>
+                            <li><a href="#">name</a></li>
+                            <li><a href="#">is</a></li>
+                            <li><a href="#">Amr</a></li>
+                        </ul>
+                    </details>
+                </div>
+                <button class="submitbutton addbuttom" type="submit">Add New Course</button>
+            </div>
+            
+        </section>
+        <section class="content">
+            <div class="hd">
+                <h2>Edit Course</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                    <li>Edit Course</li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="rows">
+                    <div class="colm1">
+                        <div class="p-s">
+                            <div class="p-s-text">Basic information</div><hr class="line">
+                        </div>
+                        <div class="form-g1">
+                            <label>Course title</label>
+                            <input type="text" class="form-text" placeholder="Enter course title">
+                            <small>Please be specific in choosing your title</small>
+                        </div>
+                        <div class="form-g2">
+                            <label>description</label>
+                            <textarea class="form-text" placeholder="Enter course description"></textarea>
+                            <small>shortly describe this course</small>
+                        </div>
+                        <div class="form-g3">
+                            <label>feedback</label>
+                            <div class="stars"><p class="star-count">15</p><small>favourite count</small></div>
+                            <div class="comments">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colm2">
+                        <div class="card card1">
+                            <button class="submitbutton" type="submit">save changes</button>
+                            <button class="submitbutton" type="submit">delete course</button>
+                        </div>
+                        <div class="p-s">
+                            <div class="p-s-text">video</div><hr class="line">
+                        </div>
+                        <div class="card card2">
+                            
+                                <div class="card-video">
+                                    <iframe src="https://www.youtube.com/watch?v=0fvEFIkT7pM" allowfullscreen=""></iframe>
+                                </div>
+                                <div class="card-body">
+                                    <label >URL</label>
+                                    <input class="form-text" type="text" placeholder="Enter video URL" value="https://www.youtube.com/watch?v=0fvEFIkT7pM" placeholder="Enter Video URL">
+                                    <small>Enter a valid video URL.</small>
+                                    <label >Course Level</label>
+                                    <input class="form-text course-level" type="text" maxlength="2" value="10">
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <span class="footer">hi</span>
+
+    <!-- <script>
+        const detailNames = ["d1", "d2", "d3", "d4", "d5" , "d6"];
+        const details = document.getElementsByTagName("details");
+        let secNumber = details.length;
+
+        detailNames.forEach((detailName) => {
+        document.getElementById(detailName).addEventListener("click", () => {
+            var i = 0;
+            while (i < secNumber) {
+                details[i].open = false;
+                i++;
+            }
+            details[detailNames.indexOf(detailName)].open = true;
+        });
+        });
+    </script> -->
+
+</body>
+</html>
