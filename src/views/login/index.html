@@ -1,15 +1,38 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/StandBy/index.css">
     <title>Login</title>
+=======
+    <title>StandBy - Login</title>
+
+>>>>>>> development
 </head>
-<body>
+<body style="display:none">
     <span class="header"></span>
-    <h1>Login</h1>
-    <script src="../templates.js"></script>
+    <div class="formContainer">
+        <div class="formHeader"><h2>Login</h2></div>
+
+     <form id="login-form">
+
+        <label >Email</label>
+        <div>
+            <i class="fa-solid fa-envelope"></i>
+            <input type="text" placeholder="email" id="email">
+        </div>
+        
+        <label >Password </label>
+        <div>
+        <i class="fa-solid fa-key"></i>
+        <input type="password" placeholder="password" id="password">
+        </div>
+        <span> Forgot Password?</span>
+        
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>

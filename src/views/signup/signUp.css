@@ -41,8 +41,12 @@
 .formContainer span {
   margin: 0 auto;
 }
+.formContainer a{
+  color:#5BC0BE !important;
 
+}
 .formContainer button {
+  cursor: pointer;
   margin-top: auto;
   background-color: #3a506b;
   border: 2px solid #3a506b;
@@ -74,6 +78,7 @@
 .formContainer input:valid {
   border-bottom: 0.3px solid #4778b4;
 }
+
 
 /* input[type="text"]:focus,
 input[type="password"]:focus {

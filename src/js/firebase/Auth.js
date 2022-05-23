@@ -3,72 +3,82 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-  updateProfile,
 } from "firebase/auth";
+import { setHeaderCTA } from "../../views/templates.js";
+import { route, routeTo } from "../router/index.js";
+import { editDoc } from "./Firestore.js";
 import { auth } from "./index.js";
 
-// AuthState
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    if (window.location.pathname != "/public/signup.html")
-      window.location = "/public/signup.html";
-  }
-});
+export const CheckUser = () =>
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setHeaderCTA("Log out", () => logOut());
+    } else {
+      setHeaderCTA("Log in", () => routeTo(route.Login));
+    }
+  });
 
 // Signup
-const signupForm = document.querySelector("#signup-form");
 
-if (signupForm) {
-  signupForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const username = signupForm["username"].value;
-    const email = signupForm["email"].value;
-    const password = signupForm["password"].value;
-
-    createUserWithEmailAndPassword(auth, email, password).then((cred) => {
+/**
+ * High level function used to sign up
+ * @param  {String} email Email have to be unique and will be used as a Key.
+ * @param  {String} password password have to be atleast 8 alphanumeric characters.
+ * @param  {String} username Username of the user can be changed later.
+ * @return {String} returns Error message if it fails, if it's success it redirect the page to home
+ */
+export const signUp = async (email, password, username) => {
+  let err;
+  await createUserWithEmailAndPassword(auth, email, password)
+    .then(async (cred) => {
       const user = cred.user;
-      updateProfile(user, {
-        displayName: username,
-      })
-        .then(() => {
-          console.log(`User:${username} created sucessfully`);
-          window.location = "/public/home.html";
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-
-      signupForm.reset();
+      const data = {
+        badges: [],
+        info: {
+          interests: "Add interests",
+          location: "Add location",
+          username: username,
+          email: cred.user.email,
+        },
+        notifications: ["Welcome to StandBy!"],
+      };
+      await editDoc("users", cred.user.uid, data);
+      routeTo(route.Home);
+    })
+    .catch((error) => {
+      err = error;
     });
-  });
-}
+  return err;
+};
 
-// Login
-const loginForm = document.querySelector("#login-Form");
-
-if (loginForm) {
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const email = loginForm["email"].value;
-    const password = loginForm["password"].value;
-    signInWithEmailAndPassword(auth, email, password).then((cred) => {
-      console.log(cred.user);
-      loginForm.reset();
+/**
+ * High level function used to Log in
+ * @param  {String} email Email have to be unique and will be used as a Key.
+ * @param  {String} password password have to be atleast 8 alphanumeric characters.
+ * @return {<Promise>String} returns Error message if it fails, if it's success it redirect the page to home
+ */
+export const login = async (email, password) => {
+  let err = "";
+  await signInWithEmailAndPassword(auth, email, password)
+    .then(() => routeTo(route.Home))
+    .catch((error) => {
+      err = error;
     });
-  });
-}
+  return err;
+};
 
-const logoutButton = document.querySelector(".logout");
-if (logoutButton) {
-  logoutButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    signOut(auth)
-      .then(() => {
-        console.log("signed out");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
-}
+/**
+ * High level function used to Log out
+ * @return {<Promise>String} returns Error message if it fails, if it's success it redirect the page to SignUp
+ */
+export const logOut = async () => {
+  let err;
+  await signOut(auth)
+    .then(() => {
+      routeTo(route.SignUp);
+    })
+    .catch((error) => {
+      err = error;
+    });
+  return err;
+};

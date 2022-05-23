@@ -62,6 +62,7 @@ header > ul > li:last-child:hover {
 }
 header > i {
   display: none !important;
+  z-index: 150;
   cursor: pointer;
 }
 
@@ -72,7 +73,7 @@ header ul.dropdown-content {
   background-color: #3a506b;
   min-width: fit-content;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 100;
   border-radius: 6px;
   list-style: none;
   padding: 0px;
@@ -106,12 +107,11 @@ header > ul > div:hover{
   header > i {
     display: block !important;
     font-size: 32px !important;
-    z-index: 100px;
     position: absolute;
     right: 10px;
   }
   header > ul {
-    z-index: 0;
+    z-index: 100;
     margin: 0;
     width: 100%;
     background-color: #3a506b;
@@ -208,6 +208,11 @@ footer > .container {
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  color:#3a506b;
+}
+.alertbox p {
+  font-weight: 600;
+  font-size: large;
 }
 .alertbox > button{
   margin:10px 0;
@@ -224,3 +229,40 @@ footer > .container {
   background-color: #5bc0ec;
 
 }
+
+.video{
+  border: 0.1px gainsboro solid;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 6px;
+  margin: 20px 10px;    
+  width: 300px;
+  height: fit-content;
+  text-align: center;
+  transition: all 0.1s ease-in;   
+  position: relative;
+}
+.video:hover {
+  transform: scale(1.05);
+}
+.video img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

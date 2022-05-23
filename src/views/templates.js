@@ -1,16 +1,39 @@
 import "../index.css";
-import { MenuStore } from "../js/controller/state.js";
+// import { MenuStore } from "../js/controller/state.js";
+import { Store } from "../js/controller/state.js";
 import "@fortawesome/fontawesome-free/css/all.css";
+import { logOut } from "../js/firebase/Auth";
+
+let MenuStore = new Store(false);
+/**
+ *
+ * @param {String} text what to display on the CTA header button
+ * @param {Function} callback what to do when the button is clicked
+ */
+export const setHeaderCTA = (
+  text = "Log out",
+  callback = () => {
+    logOut();
+  }
+) => {
+  const ctaButton = document.querySelector("#header-cta-btn");
+  ctaButton.innerHTML = text;
+  if (ctaButton) {
+    ctaButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      callback();
+    });
+  }
+};
 
 const header = document.querySelector(".header");
-const mState = MenuStore();
 if (header) {
   header.innerHTML = `
    <header>   
-    <a href="./home.html"><span class="logo">StandBy</span></a>
+    <a href="./"><span class="logo">StandBy</span></a>
     <ul>
-        <li><a href="./home.html">Home</a></li>
-        <li><a href="#">Courses</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="./profile.html">Profile</a></li>
         <div>
             <li><a href="./categories.html">Career paths</a></li>
             <ul class="dropdown-content">
@@ -23,23 +46,26 @@ if (header) {
                 
             </ul>
         </div>
-        <li><a href="#" class="logout">Log out</a></li>
+        <li><a href="#" id="header-cta-btn">Log out</a></li>
     </ul>
     <i class="fa fa-bars navmenu" id="hamburger" aria-hidden="true"></i>
     </header>
     `;
+
   document.querySelector("#hamburger").addEventListener("click", () => {
-    if (mState.state() == false) mState.setState(true);
-    else mState.setState(false);
+    if (MenuStore.state == false) MenuStore.setState(true);
+    else MenuStore.setState(false);
   });
 }
 
 const toggleMenu = () => {
-  if (mState.state() == true)
+  if (MenuStore.state == true)
     document.querySelector("header > ul").style.top = "0px";
   else document.querySelector("header > ul").style.top = "-300px";
 };
-mState.addListener(toggleMenu);
+
+MenuStore.addListener(toggleMenu);
+
 const footer = document.querySelector(".footer");
 if (footer) {
   footer.innerHTML = `<footer>   
@@ -47,15 +73,15 @@ if (footer) {
   <span class="logo">StandBy</span>
   <div class="container">
       <div>
-          <span>About</span>
+      <span><a href="./#about">About</a></span>
           <p>What is StandBy</p>
       </div>
       <div>
-          <span>Contact us</span>
+          <span><a href="./contactUs.html">Contact us</a></span>
           <p>Your feedback matter</p>
       </div>
       <div>
-          <span>Guide</span>
+          <span><a href="./#about">Guide</a></span>
           <p>How to use StandBy</p>
       </div>
   </div>
@@ -73,4 +99,41 @@ if (footer) {
 
 </footer>`;
 }
+
+/**
+ *
+ * @param {String} innerHTML the HTML you want inside the alert
+ * @param {Function} callback the function to execute after user press ok(if needed)
+ * @param {String} buttonText the text of the Alert button
+ */
+export const makeAlert = (
+  innerHTML,
+  buttonText = "OK",
+  callback = () => {}
+) => {
+  const alert = document.createElement("div");
+  alert.className = "alert";
+  alert.innerHTML = `
+    <div class="alertbox">
+    ${innerHTML}
+    <button>${buttonText}</button>
+    </div>`;
+  document.body.appendChild(alert);
+  document.querySelector(".alertbox > button").addEventListener("click", () => {
+    document.body.removeChild(alert);
+    callback();
+  });
+};
+
+//this is a video snippet, to reuse
+{
+  /* 
+  <div class="video"> 
+  <a target="_blank" href="link here" >
+    <img src="img src" alt="Title here">
+    <span>Title Here</span>
+  </a>
+</div> */
+}
+
 document.body.style.display = "block";
