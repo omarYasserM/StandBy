@@ -8,6 +8,7 @@ import { route, routeTo } from "../router/index.js";
 setHeaderCTA("Login", () => routeTo(route.Login));
 
 const signupForm = document.querySelector("#signup-form");
+ 
 if (signupForm) {
   signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -15,10 +16,14 @@ if (signupForm) {
     const email = signupForm["email"].value;
     const password = signupForm["password"].value;
     const repassword = signupForm["repassword"].value;
-
-    if (repassword != password) {
+    if(password.length<8)
+    {
+     makeAlert("Password Must contain at least eight");
+    } 
+    else if (repassword != password) {
       makeAlert("Password doesn't match");
-    } else {
+    } else
+    {
       signUp(email, password, username);
     }
   });
